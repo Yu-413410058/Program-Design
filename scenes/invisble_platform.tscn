@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy3o0vw5epkb"]
+
+[ext_resource type="Script" path="res://invisble_platform.gd" id="1_rpk0w"]
+[ext_resource type="Texture2D" uid="uid://bryil0kkun1o7" path="res://icon.svg" id="2_a22n7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cjhh"]
+size = Vector2(128, 128)
+
+[node name="invisble_platform" type="StaticBody2D"]
+script = ExtResource("1_rpk0w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_a22n7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_8cjhh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true

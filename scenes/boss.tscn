@@ -1,0 +1,157 @@
+[gd_scene load_steps=22 format=3 uid="uid://dpfsoj0njg0v8"]
+
+[ext_resource type="Script" path="res://boss/boss.gd" id="1_3q8mh"]
+[ext_resource type="Texture2D" uid="uid://dkgt8c2o0mu27" path="res://Sprites/Dino_Idle.png" id="1_ebk0d"]
+[ext_resource type="BehaviorTree" uid="uid://d38g2y31fvvkp" path="res://boss/new_behavior_tree.tres" id="2_ht6xs"]
+[ext_resource type="Texture2D" uid="uid://c2xulyqcx6rvc" path="res://Sprites/Dino_Run01.png" id="3_6tyrp"]
+[ext_resource type="Texture2D" uid="uid://1x23wipm0kgs" path="res://Sprites/crounch dino5.png" id="4_bu77r"]
+[ext_resource type="Texture2D" uid="uid://6i3j3p1c5n83" path="res://Sprites/Dino_meteor.png" id="4_il0if"]
+[ext_resource type="Texture2D" uid="uid://cr306i4eq6pkr" path="res://Sprites/Dino_Run02.png" id="4_v3cyt"]
+[ext_resource type="PackedScene" uid="uid://bxberkb5v4os0" path="res://boss/boss_health_bar.tscn" id="6_2a03k"]
+[ext_resource type="Script" path="res://scenes/hit_box.gd" id="7_khipf"]
+[ext_resource type="Script" path="res://scenes/melee_attack.gd" id="9_tdgv6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhrgs"]
+atlas = ExtResource("1_ebk0d")
+region = Rect2(0, 0, 88, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s20l1"]
+atlas = ExtResource("4_bu77r")
+region = Rect2(0, 0, 127, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeyh3"]
+atlas = ExtResource("4_il0if")
+region = Rect2(0, 0, 88, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2pgf"]
+atlas = ExtResource("3_6tyrp")
+region = Rect2(0, 0, 88, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcon5"]
+atlas = ExtResource("4_v3cyt")
+region = Rect2(0, 0, 88, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6dauo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhrgs")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s20l1")
+}],
+"loop": true,
+"name": &"lie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeyh3")
+}],
+"loop": true,
+"name": &"meteor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2pgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcon5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnxv3"]
+size = Vector2(135, 242)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_rq84l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65pup"]
+size = Vector2(1118, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qukey"]
+size = Vector2(136, 243)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cbie"]
+size = Vector2(293, 161)
+
+[node name="boss" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_3q8mh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.29494)
+sprite_frames = SubResource("SpriteFrames_6dauo")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(5.5, 1)
+shape = SubResource("RectangleShape2D_cnxv3")
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("2_ht6xs")
+blackboard_plan = SubResource("BlackboardPlan_rq84l")
+monitor_performance = true
+
+[node name="DetectionArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="DetectionShape" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_65pup")
+
+[node name="BossHealthBar" parent="." instance=ExtResource("6_2a03k")]
+offset_left = -17.0
+offset_top = -157.0
+offset_right = 33.0
+offset_bottom = -116.0
+scale = Vector2(1.5, 1.5)
+
+[node name="HitBox" type="Area2D" parent="." groups=["enemies"]]
+visible = false
+script = ExtResource("7_khipf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" groups=["enemies"]]
+position = Vector2(5, 0.5)
+shape = SubResource("RectangleShape2D_qukey")
+
+[node name="Timer" type="Timer" parent="HitBox"]
+wait_time = 0.5
+
+[node name="MeleeAttack" type="Area2D" parent="." groups=["enemies"]]
+visible = false
+collision_mask = 2
+script = ExtResource("9_tdgv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeAttack" groups=["enemies"]]
+position = Vector2(1.5, 14.5)
+shape = SubResource("RectangleShape2D_3cbie")
+disabled = true
+
+[node name="float_timer" type="Timer" parent="MeleeAttack"]
+
+[node name="ground_timer" type="Timer" parent="MeleeAttack"]
+
+[node name="Timer" type="Timer" parent="MeleeAttack"]
+
+[node name="MeteorSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(1, -339)
+
+[node name="MeteorTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="HitBox/Timer" to="HitBox" method="_on_timer_timeout"]
+[connection signal="body_entered" from="MeleeAttack" to="MeleeAttack" method="_on_body_entered"]
+[connection signal="timeout" from="MeleeAttack/Timer" to="MeleeAttack" method="_on_timer_timeout"]

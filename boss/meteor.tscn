@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmei85rgmym83"]
+
+[ext_resource type="Script" path="res://meteor.gd" id="1_oqnok"]
+[ext_resource type="Texture2D" uid="uid://jlvk0cbkkqo8" path="res://Sprites/meteor.png" id="2_f056m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up8si"]
+atlas = ExtResource("2_f056m")
+region = Rect2(0, 0, 598, 598)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwa0y"]
+atlas = ExtResource("2_f056m")
+region = Rect2(598, 0, 598, 598)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccl1i"]
+atlas = ExtResource("2_f056m")
+region = Rect2(0, 598, 598, 598)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4y01i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up8si")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwa0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccl1i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0n15l"]
+radius = 190.263
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(0.1, 0.1)
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_oqnok")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4y01i")
+frame_progress = 0.852502
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 7.62939e-06)
+shape = SubResource("CircleShape2D_0n15l")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

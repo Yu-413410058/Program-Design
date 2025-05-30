@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=3 uid="uid://di4oxenppua6a"]
+
+[ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_ho20w"]
+[ext_resource type="Texture2D" uid="uid://dkgt8c2o0mu27" path="res://Sprites/Dino_Idle.png" id="1_mhfes"]
+[ext_resource type="PackedScene" uid="uid://bea7k1trf14rb" path="res://scenes/shadow.tscn" id="2_2hcq0"]
+[ext_resource type="Texture2D" uid="uid://nmor57ki30dt" path="res://Sprites/Dino_Death.png" id="3_2uglk"]
+[ext_resource type="PackedScene" uid="uid://4omt5kolc1gm" path="res://scenes/fireball.tscn" id="3_pced2"]
+[ext_resource type="Texture2D" uid="uid://c2xulyqcx6rvc" path="res://Sprites/Dino_Run01.png" id="3_s2ivf"]
+[ext_resource type="Texture2D" uid="uid://cr306i4eq6pkr" path="res://Sprites/Dino_Run02.png" id="4_dffmy"]
+[ext_resource type="PackedScene" uid="uid://dy2cthr0bbfwd" path="res://scenes/flame.tscn" id="4_rom1x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jevf2"]
+atlas = ExtResource("3_2uglk")
+region = Rect2(0, 0, 88, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_megc2"]
+atlas = ExtResource("1_mhfes")
+region = Rect2(0, 0, 88, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0sn1"]
+atlas = ExtResource("3_s2ivf")
+region = Rect2(0, 0, 88, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qh6s"]
+atlas = ExtResource("4_dffmy")
+region = Rect2(0, 0, 88, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uha83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jevf2")
+}],
+"loop": true,
+"name": &"death",
+"speed": 100.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_megc2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0sn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qh6s")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ot38"]
+radius = 2.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 5
+collision_layer = 2
+script = ExtResource("1_ho20w")
+shadow_node = ExtResource("2_2hcq0")
+fireball_scene = ExtResource("3_pced2")
+flame_scene = ExtResource("4_rom1x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(0.181818, 0.177083)
+sprite_frames = SubResource("SpriteFrames_uha83")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(4.54747e-13, -7)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_6ot38")
+
+[node name="dash_timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="dash_again_timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="shadow_timer" type="Timer" parent="."]
+wait_time = 0.01
+
+[node name="fireball_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="heal_timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(38, -11)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -3.0
+offset_top = -28.0
+offset_right = 76.0
+offset_bottom = -5.0
+scale = Vector2(0.59, 0.59)
+text = "💚"
+
+[connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="dash_again_timer" to="." method="_on_dash_again_timer_timeout"]
+[connection signal="timeout" from="shadow_timer" to="." method="_on_shadow_timer_timeout"]
+[connection signal="timeout" from="fireball_timer" to="." method="_on_fireball_timer_timeout"]
+[connection signal="timeout" from="heal_timer" to="." method="_on_heal_timer_timeout"]

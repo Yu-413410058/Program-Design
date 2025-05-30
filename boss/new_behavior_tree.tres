@@ -1,0 +1,55 @@
+[gd_resource type="BehaviorTree" load_steps=18 format=3 uid="uid://d38g2y31fvvkp"]
+
+[ext_resource type="Script" path="res://ai/tasks/check_player_in_range.gd" id="1_8lnpk"]
+[ext_resource type="Script" path="res://ai/tasks/BossBattleStarted.gd" id="1_73ywb"]
+[ext_resource type="Script" path="res://ai/tasks/MeleeAttack.gd" id="2_gb86d"]
+[ext_resource type="Script" path="res://ai/tasks/MeteorAttack.gd" id="2_q8geo"]
+[ext_resource type="Script" path="res://ai/tasks/SetWanderTarget.gd" id="3_4lw8d"]
+[ext_resource type="Script" path="res://ai/tasks/MoveToTarget.gd" id="4_ayex1"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_v20po"]
+
+[sub_resource type="BTCondition" id="BTCondition_agmx5"]
+script = ExtResource("1_73ywb")
+
+[sub_resource type="BTSequence" id="BTSequence_8lxxi"]
+custom_name = "battle_entered"
+children = [SubResource("BTCondition_agmx5")]
+
+[sub_resource type="BTCondition" id="BTCondition_ut0o3"]
+script = ExtResource("1_8lnpk")
+
+[sub_resource type="BTAction" id="BTAction_c8qbg"]
+script = ExtResource("2_q8geo")
+wait_time = 2.0
+
+[sub_resource type="BTAction" id="BTAction_im86w"]
+script = ExtResource("2_gb86d")
+jump_force = 300.0
+float_duration = 0.5
+ground_wait_duration = 0.5
+fall_speed = 400.0
+horizontal_speed = 200.0
+
+[sub_resource type="BTSequence" id="BTSequence_kx4vm"]
+custom_name = "player_detection"
+children = [SubResource("BTCondition_ut0o3"), SubResource("BTAction_c8qbg"), SubResource("BTAction_im86w")]
+
+[sub_resource type="BTAction" id="BTAction_hld6c"]
+script = ExtResource("3_4lw8d")
+
+[sub_resource type="BTAction" id="BTAction_sonel"]
+script = ExtResource("4_ayex1")
+speed_multiplier = 1.0
+tolerance = 10.0
+
+[sub_resource type="BTSequence" id="BTSequence_3r4td"]
+custom_name = "wander"
+children = [SubResource("BTAction_hld6c"), SubResource("BTAction_sonel")]
+
+[sub_resource type="BTSelector" id="BTSelector_prnoa"]
+children = [SubResource("BTSequence_8lxxi"), SubResource("BTSequence_kx4vm"), SubResource("BTSequence_3r4td")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_v20po")
+root_task = SubResource("BTSelector_prnoa")

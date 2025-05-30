@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://db41xot2nhnki"]
+
+[ext_resource type="PackedScene" uid="uid://bw2yox00m8q4m" path="res://scenes/killzone.tscn" id="1_813mg"]
+[ext_resource type="Script" path="res://scenes/scripts/map_killzone.gd" id="2_pwx27"]
+
+[node name="map_killzone" instance=ExtResource("1_813mg")]
+script = ExtResource("2_pwx27")
+
+[node name="Timer" parent="." index="0"]
+wait_time = 0.51

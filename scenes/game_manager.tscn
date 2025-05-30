@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://n6txg2t2erpr"]
+
+[ext_resource type="Script" path="res://scenes/scripts/game_manager.gd" id="1_0npfu"]
+
+[node name="game_manager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0npfu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.63
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

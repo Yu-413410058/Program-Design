@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://b87qclbxd01nr"]
+
+[ext_resource type="Script" path="res://boss/victory_screen.gd" id="1_j6k7o"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_j6k7o")
+
+[node name="VictoryLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Victory"
+
+[node name="DeathLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 18.0
+offset_right = 102.0
+offset_bottom = 41.0
+text = "Total Deaths:"
+
+[node name="TImeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 129.0
+offset_bottom = 61.0
+text = "Total Time Used:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 59.0
+offset_right = 20.0
+offset_bottom = 99.0
+
+[node name="Restart" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Exit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Exit
+"
+
+[connection signal="pressed" from="HBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]

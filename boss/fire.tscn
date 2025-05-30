@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cndi8lb1l1o74"]
+
+[ext_resource type="Texture2D" uid="uid://dm76me641iu1k" path="res://Sprites/Fire-Pixel-Art-Animation-Sprites2.png" id="1_sprr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlmge"]
+size = Vector2(858, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhrd2"]
+atlas = ExtResource("1_sprr1")
+region = Rect2(0, 0, 913, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgnn6"]
+atlas = ExtResource("1_sprr1")
+region = Rect2(0, 143, 913, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xk0l"]
+atlas = ExtResource("1_sprr1")
+region = Rect2(0, 288, 913, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkr14"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhrd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgnn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xk0l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(0.27, 0.27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-12, 31)
+shape = SubResource("RectangleShape2D_qlmge")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jkr14")
+autoplay = "default"
+frame_progress = 0.845241
