@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://c5tpmkr73vb0p"]
+[gd_scene load_steps=36 format=4 uid="uid://c5tpmkr73vb0p"]
 
 [ext_resource type="Texture2D" uid="uid://don135l6rxgtx" path="res://scenes/Sprites/world_tileset.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://db41xot2nhnki" path="res://scenes/map_killzone.tscn" id="2"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dcx7nnltne0y0" path="res://boss/victory_screen.tscn" id="16"]
 [ext_resource type="Script" path="res://boss/battle_trigger.gd" id="17"]
 [ext_resource type="PackedScene" uid="uid://cndi8lb1l1o74" path="res://boss/fire.tscn" id="18"]
+[ext_resource type="AudioStream" uid="uid://cwr3b5mhh306e" path="res://scenes/music/Koyuki 97 (SMASH) - Footage (Blue Archive) - Kokoyuki Ch. (youtube, 6L7va0F3a_E).mp3" id="18_30bkp"]
 [ext_resource type="Script" path="res://scenes/TestMusic.gd" id="19_7q2pg"]
 [ext_resource type="AudioStream" uid="uid://dm7f5ffbftasf" path="res://scenes/music/Dream Sweet in Sea Major - ミラクルミュージカル (youtube, uxyM7vhU0uU).mp3" id="20_nkjr6"]
 
@@ -714,6 +715,9 @@ script = ExtResource("17")
 visible = false
 position = Vector2(-70, -3239)
 shape = SubResource("RectangleShape2D_wlk4k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BattleArea"]
+stream = ExtResource("18_30bkp")
 
 [node name="fire_ground" parent="." instance=ExtResource("18")]
 position = Vector2(-988, -3188)
