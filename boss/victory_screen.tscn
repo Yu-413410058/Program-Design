@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://hj75ajb7427x" path="res://pause_ui/pause_theme.tres" id="1"]
 [ext_resource type="Script" path="res://boss/victory_screen.gd" id="2"]
 [ext_resource type="FontFile" uid="uid://dpqx75h45ec2v" path="res://scenes/fonts/PixelOperator8-Bold.ttf" id="3"]
-[ext_resource type="AudioStream" uid="uid://dv6ljh4ebfqjn" path="res://scenes/music/time_for_adventure.mp3" id="4"]
+[ext_resource type="AudioStream" uid="uid://ctdnqtgj3c1hd" path="res://scenes/sounds/Frolic (Curb Your Enthusiasm Theme) - Luciano Michelini (youtube, c-fUGBfJHCY).mp3" id="4_ryw46"]
 
 [node name="VictoryScreen" type="Control" groups=["victory_screen"]]
 layout_mode = 3
@@ -98,5 +98,5 @@ offset_right = 1153.0
 offset_bottom = 650.0
 color = Color(0.21, 0.21, 0.21, 0.529412)
 
-[node name="VictoryMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4")
+[node name="VictoryMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ryw46")
