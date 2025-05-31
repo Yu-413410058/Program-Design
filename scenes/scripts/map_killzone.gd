@@ -7,8 +7,7 @@ func _on_body_entered(body: Node2D) -> void :
 	body.play_death_animation()
 	body.velocity.y = -300
 	var collision = body.get_node("CollisionShape2D")
-	if collision:
-		collision.disabled = true
+	
 	timer.start()
 
 

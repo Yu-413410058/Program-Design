@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bea7k1trf14rb" path="res://scenes/shadow.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://4omt5kolc1gm" path="res://scenes/fireball.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://dy2cthr0bbfwd" path="res://scenes/flame.tscn" id="4"]
-[ext_resource type="Texture2D" uid="uid://nmor57ki30dt" path="res://Sprites/Dino_Death.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://dkgt8c2o0mu27" path="res://Sprites/Dino_Idle.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://c2xulyqcx6rvc" path="res://Sprites/Dino_Run01.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://cr306i4eq6pkr" path="res://Sprites/Dino_Run02.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://nmor57ki30dt" path="res://scenes/Sprites/Dino_Death.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dkgt8c2o0mu27" path="res://scenes/Sprites/Dino_Idle.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c2xulyqcx6rvc" path="res://scenes/Sprites/Dino_Run01.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cr306i4eq6pkr" path="res://scenes/Sprites/Dino_Run02.png" id="8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jevf2"]
 atlas = ExtResource("5")

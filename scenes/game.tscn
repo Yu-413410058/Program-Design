@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=4 uid="uid://c5tpmkr73vb0p"]
 
-[ext_resource type="Texture2D" uid="uid://don135l6rxgtx" path="res://Sprites/world_tileset.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://don135l6rxgtx" path="res://scenes/Sprites/world_tileset.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://db41xot2nhnki" path="res://scenes/map_killzone.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://di4oxenppua6a" path="res://scenes/player.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://dpfsoj0njg0v8" path="res://scenes/boss.tscn" id="4"]
@@ -11,8 +11,8 @@
 [ext_resource type="Script" path="res://scenes/scripts/windy.gd" id="9"]
 [ext_resource type="Script" path="res://scenes/scripts/lava.gd" id="10"]
 [ext_resource type="Script" path="res://scenes/scripts/checkpoint.gd" id="11"]
-[ext_resource type="Texture2D" uid="uid://cefku6q0gk6gb" path="res://Sprites/0101742cbe6cb6328f8f0d6b38f0cd91.jpeg" id="12"]
-[ext_resource type="Texture2D" uid="uid://deu7mhrxbeoci" path="res://Sprites/1748711527515.jpg" id="13"]
+[ext_resource type="Texture2D" uid="uid://cefku6q0gk6gb" path="res://scenes/Sprites/0101742cbe6cb6328f8f0d6b38f0cd91.jpeg" id="12"]
+[ext_resource type="Texture2D" uid="uid://deu7mhrxbeoci" path="res://scenes/Sprites/1748711527515.jpg" id="13"]
 [ext_resource type="Script" path="res://scenes/scripts/checkpoint_2.gd" id="14"]
 [ext_resource type="PackedScene" uid="uid://dhsfg16vhshc2" path="res://scenes/health_ui.tscn" id="15"]
 [ext_resource type="PackedScene" uid="uid://dcx7nnltne0y0" path="res://boss/victory_screen.tscn" id="16"]
@@ -394,7 +394,7 @@ position = Vector2(-1, 1)
 shape = SubResource("WorldBoundaryShape2D_xh23i")
 
 [node name="Player" parent="." instance=ExtResource("3")]
-position = Vector2(-611, -26)
+position = Vector2(329, -3153)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
@@ -625,6 +625,7 @@ scale = Vector2(1, 0.335938)
 [node name="lava_platform" type="Node" parent="."]
 
 [node name="lava" type="Area2D" parent="lava_platform"]
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("10")
 

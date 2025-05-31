@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=4 uid="uid://4omt5kolc1gm"]
 
 [ext_resource type="Script" path="res://scenes/scripts/fireball.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://slj200rvh3pi" path="res://Sprites/FB001.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://diahf6bbhe1ty" path="res://Sprites/FB002.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://bpew7bv1ssm5s" path="res://Sprites/FB003.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://dqkmcnow7qojt" path="res://Sprites/FB004.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://ckp5xw62trddc" path="res://Sprites/FB005.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://slj200rvh3pi" path="res://scenes/Sprites/FB001.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://diahf6bbhe1ty" path="res://scenes/Sprites/FB002.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bpew7bv1ssm5s" path="res://scenes/Sprites/FB003.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dqkmcnow7qojt" path="res://scenes/Sprites/FB004.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://ckp5xw62trddc" path="res://scenes/Sprites/FB005.png" id="6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_du2ak"]
 atlas = ExtResource("2")

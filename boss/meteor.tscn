@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://cmei85rgmym83"]
+[gd_scene load_steps=8 format=3 uid="uid://cmei85rgmym83"]
 
 [ext_resource type="Script" path="res://boss/meteor.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://jlvk0cbkkqo8" path="res://Sprites/meteor.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://jlvk0cbkkqo8" path="res://scenes/Sprites/meteor.png" id="2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_up8si"]
 atlas = ExtResource("2")
@@ -33,7 +33,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0n15l"]
-radius = 190.26300048828125
+radius = 190.263
 
 [node name="Area2D" type="Area2D"]
 scale = Vector2(0.1, 0.1)
@@ -43,7 +43,7 @@ script = ExtResource("1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4y01i")
-frame_progress = 0.8525019884109497
+frame_progress = 0.852502
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-20, 7.62939e-06)

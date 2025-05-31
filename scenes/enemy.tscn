@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=4 uid="uid://dqx3c3f2us10r"]
 
 [ext_resource type="Script" path="res://scenes/scripts/enemy.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dwvbfa7t4u2yq" path="res://Sprites/Bird_01.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://d2pjwt8p5evjx" path="res://Sprites/Bird_02.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dwvbfa7t4u2yq" path="res://scenes/Sprites/Bird_01.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://d2pjwt8p5evjx" path="res://scenes/Sprites/Bird_02.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://bw2yox00m8q4m" path="res://scenes/killzone.tscn" id="4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgav7"]

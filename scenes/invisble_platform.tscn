@@ -1,7 +1,7 @@
 [gd_scene load_steps=40 format=3 uid="uid://cy3o0vw5epkb"]
 
 [ext_resource type="Script" path="res://scenes/scripts/invisble_platform.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://daa5kavno8c4p" path="res://Sprites/doro.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://daa5kavno8c4p" path="res://scenes/Sprites/doro.png" id="2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjhh0"]
 atlas = ExtResource("2")

@@ -9,34 +9,34 @@ var target_position: Vector2
 
 func _ready() -> void :
 
-    if target_position:
-        var dir = (target_position - global_position).normalized()
+	if target_position:
+		var dir = (target_position - global_position).normalized()
 
-        sprite.flip_h = dir.x > 0
-        set_physics_process(true)
+		sprite.flip_h = dir.x > 0
+		set_physics_process(true)
 
-    timer.wait_time = lifetime
-    timer.one_shot = true
-    timer.start()
+	timer.wait_time = lifetime
+	timer.one_shot = true
+	timer.start()
 
 func _physics_process(delta: float) -> void :
-    if target_position:
-        position += (target_position - global_position).normalized() * fall_speed * delta
+	if target_position:
+		position += (target_position - global_position).normalized() * fall_speed * delta
 
 func _on_body_entered(body):
-    if body.is_in_group("player"):
-        if body.dash_invincible:
-            return
-        print("💥 Player smashed by meteor!")
-        GameManager.take_damage(2)
-        queue_free()
-    elif body is TileMap:
-        print("🌋 Meteor hit the ground")
-        queue_free()
-    elif body.is_in_group("enemies"):
-        return
+	if body.is_in_group("player"):
+		if body.dash_invincible:
+			return
+		print("💥 Player smashed by meteor!")
+		GameManager.take_damage(2)
+		queue_free()
+	elif body is TileMap:
+		print("🌋 Meteor hit the ground")
+		queue_free()
+	elif body.is_in_group("enemies"):
+		return
 
 
 
 func _on_timer_timeout() -> void :
-    queue_free()
+	queue_free()

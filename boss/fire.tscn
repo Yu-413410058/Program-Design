@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://cndi8lb1l1o74"]
 
 [ext_resource type="Script" path="res://boss/fire.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dm76me641iu1k" path="res://Sprites/Fire-Pixel-Art-Animation-Sprites2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dm76me641iu1k" path="res://scenes/Sprites/Fire-Pixel-Art-Animation-Sprites2.png" id="2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlmge"]
 size = Vector2(858, 82)
