@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bea7k1trf14rb"]
+[gd_scene load_steps=3 format=4 uid="uid://bea7k1trf14rb"]
 
-[ext_resource type="Texture2D" uid="uid://dkgt8c2o0mu27" path="res://Sprites/Dino_Idle.png" id="1_2j0wn"]
-[ext_resource type="Script" path="res://scenes/scripts/shadow.gd" id="2_7ys2o"]
+[ext_resource type="Texture2D" uid="uid://dkgt8c2o0mu27" path="res://Sprites/Dino_Idle.png" id="1"]
+[ext_resource type="Script" path="res://scenes/scripts/shadow.gd" id="2"]
 
 [node name="shadow" type="Sprite2D"]
 modulate = Color(0.365088, 0.365088, 0.365088, 1)
 show_behind_parent = true
-texture = ExtResource("1_2j0wn")
-script = ExtResource("2_7ys2o")
+texture = ExtResource("1")
+script = ExtResource("2")

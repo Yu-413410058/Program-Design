@@ -1,13 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhsfg16vhshc2"]
+[gd_scene load_steps=2 format=4 uid="uid://dhsfg16vhshc2"]
 
-[ext_resource type="Script" path="res://scenes/scripts/health_ui.gd" id="1_quwf4"]
+[ext_resource type="Script" path="res://scenes/scripts/health_ui.gd" id="1"]
 
-[node name="health_ui" type="Control"]
+[node name="health_ui" type="Control" groups=["health_ui"]]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_quwf4")
+script = ExtResource("1")
 
 [node name="health_label" type="Label" parent="."]
 layout_mode = 0

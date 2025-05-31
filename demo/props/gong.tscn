@@ -1,14 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpd1wmw2f7bvg"]
+[gd_scene load_steps=12 format=4 uid="uid://bpd1wmw2f7bvg"]
 
-[ext_resource type="Script" path="res://demo/props/gong.gd" id="1_77c1i"]
-[ext_resource type="Texture2D" uid="uid://i476iia1ua8q" path="res://demo/assets/env_gong.png" id="1_kbnv6"]
-[ext_resource type="Texture2D" uid="uid://dwhhxj5557qrb" path="res://demo/assets/shadow.png" id="1_vl1mv"]
-[ext_resource type="Texture2D" uid="uid://dj4oayt5ttvh8" path="res://demo/assets/fx.png" id="2_dib3m"]
-[ext_resource type="Script" path="res://demo/agents/scripts/hurtbox.gd" id="5_xeb5y"]
-[ext_resource type="Script" path="res://demo/agents/scripts/health.gd" id="6_6a3q1"]
+[ext_resource type="Script" path="res://demo/props/gong.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dwhhxj5557qrb" path="res://demo/assets/shadow.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://i476iia1ua8q" path="res://demo/assets/env_gong.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dj4oayt5ttvh8" path="res://demo/assets/fx.png" id="4"]
+[ext_resource type="Script" path="res://demo/agents/scripts/hurtbox.gd" id="5"]
+[ext_resource type="Script" path="res://demo/agents/scripts/health.gd" id="6"]
 
 [sub_resource type="Animation" id="Animation_i5ovs"]
-length = 0.001
+length = 0.0010000000474974513
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -812,15 +812,15 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nixvt"]
-radius = 20.91
-height = 186.37
+radius = 20.90999984741211
+height = 186.3699951171875
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ru7jf"]
-radius = 39.2
-height = 253.42
+radius = 39.20000076293945
+height = 253.4199981689453
 
 [node name="Gong" type="StaticBody2D"]
-script = ExtResource("1_77c1i")
+script = ExtResource("1")
 metadata/_edit_horizontal_guides_ = [111.0]
 
 [node name="Root" type="Node2D" parent="."]
@@ -830,10 +830,10 @@ metadata/_edit_lock_ = true
 modulate = Color(1, 1, 1, 0.329412)
 position = Vector2(0, -8)
 scale = Vector2(2.31, 1.7)
-texture = ExtResource("1_vl1mv")
+texture = ExtResource("2")
 
 [node name="Gong" type="Sprite2D" parent="Root"]
-texture = ExtResource("1_kbnv6")
+texture = ExtResource("3")
 offset = Vector2(0, -110)
 
 [node name="FX" type="Node2D" parent="."]
@@ -843,9 +843,9 @@ metadata/_edit_lock_ = true
 visible = false
 modulate = Color(0.329412, 0.352941, 0.392157, 1)
 position = Vector2(-65, -89)
-rotation = 1.57058
+rotation = 1.570580005645752
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_dib3m")
+texture = ExtResource("4")
 region_enabled = true
 region_rect = Rect2(0, 0, 191, 74)
 
@@ -853,9 +853,9 @@ region_rect = Rect2(0, 0, 191, 74)
 visible = false
 modulate = Color(0.329412, 0.352941, 0.392157, 1)
 position = Vector2(70, -89)
-rotation = 4.71215
+rotation = 4.7121500968933105
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_dib3m")
+texture = ExtResource("4")
 region_enabled = true
 region_rect = Rect2(0, 0, 191, 74)
 
@@ -863,9 +863,9 @@ region_rect = Rect2(0, 0, 191, 74)
 visible = false
 modulate = Color(0.329412, 0.352941, 0.392157, 1)
 position = Vector2(-65, -89)
-rotation = 1.57058
+rotation = 1.570580005645752
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_dib3m")
+texture = ExtResource("4")
 region_enabled = true
 region_rect = Rect2(0, 0, 191, 74)
 
@@ -873,9 +873,9 @@ region_rect = Rect2(0, 0, 191, 74)
 visible = false
 modulate = Color(0.329412, 0.352941, 0.392157, 1)
 position = Vector2(70, -89)
-rotation = 4.71215
+rotation = 4.7121500968933105
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_dib3m")
+texture = ExtResource("4")
 region_enabled = true
 region_rect = Rect2(0, 0, 191, 74)
 
@@ -883,9 +883,9 @@ region_rect = Rect2(0, 0, 191, 74)
 visible = false
 modulate = Color(0.329412, 0.352941, 0.392157, 1)
 position = Vector2(-65, -89)
-rotation = 1.57058
+rotation = 1.570580005645752
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_dib3m")
+texture = ExtResource("4")
 region_enabled = true
 region_rect = Rect2(0, 0, 191, 74)
 
@@ -893,9 +893,9 @@ region_rect = Rect2(0, 0, 191, 74)
 visible = false
 modulate = Color(0.329412, 0.352941, 0.392157, 1)
 position = Vector2(70, -89)
-rotation = 4.71215
+rotation = 4.7121500968933105
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_dib3m")
+texture = ExtResource("4")
 region_enabled = true
 region_rect = Rect2(0, 0, 191, 74)
 
@@ -908,23 +908,23 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14.395)
-rotation = 1.5708
+rotation = 1.5707999467849731
 shape = SubResource("CapsuleShape2D_nixvt")
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
 collision_layer = 8
 collision_mask = 0
-script = ExtResource("5_xeb5y")
+script = ExtResource("5")
 health = NodePath("../Health")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, -14.395)
-rotation = 1.5708
+rotation = 1.5707999467849731
 shape = SubResource("CapsuleShape2D_ru7jf")
 debug_color = Color(0.886275, 0.109804, 0.756863, 0.419608)
 
 [node name="Health" type="Node" parent="."]
-script = ExtResource("6_6a3q1")
-max_health = 1e+11
+script = ExtResource("6")
+max_health = 100000000000.0
 
 [connection signal="damaged" from="Health" to="." method="_on_health_damaged"]

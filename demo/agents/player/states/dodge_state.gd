@@ -1,15 +1,15 @@
-#*
-#* dodge_state.gd
-#* =============================================================================
-#* Copyright (c) 2023-present Serhii Snitsaruk and the LimboAI contributors.
-#*
-#* Use of this source code is governed by an MIT-style
-#* license that can be found in the LICENSE file or at
-#* https://opensource.org/licenses/MIT.
-#* =============================================================================
-#*
+
+
+
+
+
+
+
+
+
+
 extends LimboState
-## Dodge state.
+
 
 
 @export var animation_player: AnimationPlayer
@@ -22,27 +22,27 @@ var move_dir: Vector2
 var elapsed_time: float
 
 
-func _enter() -> void:
-	elapsed_time = 0.0
-	hurtbox_collision.disabled = true
+func _enter() -> void :
+    elapsed_time = 0.0
+    hurtbox_collision.disabled = true
 
-	var horizontal_move: float = Input.get_axis(&"move_left", &"move_right")
-	if is_zero_approx(horizontal_move):
-		move_dir = Vector2.RIGHT * agent.get_facing()
-	else:
-		move_dir = Vector2.RIGHT * signf(horizontal_move)
-	agent.face_dir(move_dir.x)
+    var horizontal_move: float = Input.get_axis(&"move_left", &"move_right")
+    if is_zero_approx(horizontal_move):
+        move_dir = Vector2.RIGHT * agent.get_facing()
+    else:
+        move_dir = Vector2.RIGHT * signf(horizontal_move)
+    agent.face_dir(move_dir.x)
 
-	animation_player.play(animation, 0.1)
-
-
-func _exit() -> void:
-	hurtbox_collision.set_deferred(&"disabled", false)
+    animation_player.play(animation, 0.1)
 
 
-func _update(p_delta: float) -> void:
-	elapsed_time += p_delta
-	var desired_velocity: Vector2 = move_dir * dodge_speed
-	agent.move(desired_velocity)
-	if elapsed_time > duration:
-		get_root().dispatch(EVENT_FINISHED)
+func _exit() -> void :
+    hurtbox_collision.set_deferred(&"disabled", false)
+
+
+func _update(p_delta: float) -> void :
+    elapsed_time += p_delta
+    var desired_velocity: Vector2 = move_dir * dodge_speed
+    agent.move(desired_velocity)
+    if elapsed_time > duration:
+        get_root().dispatch(EVENT_FINISHED)

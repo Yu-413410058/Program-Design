@@ -1,21 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://cndi8lb1l1o74"]
+[gd_scene load_steps=8 format=4 uid="uid://cndi8lb1l1o74"]
 
-[ext_resource type="Script" path="res://boss/fire.gd" id="1_irshn"]
-[ext_resource type="Texture2D" uid="uid://dm76me641iu1k" path="res://Sprites/Fire-Pixel-Art-Animation-Sprites2.png" id="1_sprr1"]
+[ext_resource type="Script" path="res://boss/fire.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dm76me641iu1k" path="res://Sprites/Fire-Pixel-Art-Animation-Sprites2.png" id="2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlmge"]
 size = Vector2(858, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhrd2"]
-atlas = ExtResource("1_sprr1")
+atlas = ExtResource("2")
 region = Rect2(0, 0, 913, 143)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dgnn6"]
-atlas = ExtResource("1_sprr1")
+atlas = ExtResource("2")
 region = Rect2(0, 143, 913, 143)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8xk0l"]
-atlas = ExtResource("1_sprr1")
+atlas = ExtResource("2")
 region = Rect2(0, 288, 913, 144)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jkr14"]
@@ -42,7 +42,7 @@ collision_layer = 0
 collision_mask = 2
 monitoring = false
 monitorable = false
-script = ExtResource("1_irshn")
+script = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-12, 31)
@@ -51,7 +51,7 @@ shape = SubResource("RectangleShape2D_qlmge")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jkr14")
 autoplay = "default"
-frame_progress = 0.845241
+frame_progress = 0.8452410101890564
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

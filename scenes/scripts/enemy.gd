@@ -16,11 +16,11 @@ var is_dying = false
 
 func _process(delta):
 	if is_dying:
-		# Only vertical movement when dying (small jump + fall)
+
 		position.y += velocity.y * delta
 		velocity.y += gravity * delta
 	else:
-		# Normal patrol movement
+
 		if ray_case_right.is_colliding():
 			direction = -1
 			animated_sprite_2d.flip_h = false

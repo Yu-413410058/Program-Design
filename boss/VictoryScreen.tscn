@@ -1,13 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://b87qclbxd01nr"]
+[gd_scene load_steps=2 format=4 uid="uid://k1q507ki40b0"]
 
-[ext_resource type="Script" path="res://boss/victory_screen.gd" id="1_j6k7o"]
+[sub_resource type="GDScript" id="GDScript_sp1eq"]
+script/source = "extends Control
+@onready var restart: Button = $HBoxContainer/Restart
+@onready var exit: Button = $HBoxContainer/Exit
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_restart_pressed():
+	get_tree().reload_current_scene()
+
+func _on_exit_pressed():
+	get_tree().quit()
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_j6k7o")
+script = SubResource("GDScript_sp1eq")
 
 [node name="VictoryLabel" type="Label" parent="."]
 layout_mode = 0

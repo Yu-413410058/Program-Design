@@ -1,4 +1,4 @@
-# Boss.gd
+
 extends CharacterBody2D
 class_name Boss
 
@@ -6,12 +6,12 @@ class_name Boss
 @export var chase_speed: float = 100.0
 @export var wander_range: float = 100.0
 @export var gravity: float = 980.0
-@export var boss_max_health := 100
-var boss_health := 100
-var current_phase := 1
+@export var boss_max_health: = 100
+var boss_health: = 100
+var current_phase: = 1
 
 @onready var detection_area: Area2D = $DetectionArea
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D  
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var meteor_timer: Timer = $MeteorTimer
 @onready var meteor_spawn_point: Marker2D = $MeteorSpawnPoint
 @export var meteor_scene: PackedScene
@@ -24,8 +24,8 @@ var target_position: Vector2
 var player_detected: bool = false
 var last_direction: Vector2 = Vector2.ZERO
 var battle_started: bool = false
-var damage_types := {
-	"fireball": 1,
+var damage_types: = {
+	"fireball": 1, 
 	"flame": 2
 }
 
@@ -33,22 +33,22 @@ var damage_types := {
 func _ready():
 	GameManager.boss_health = boss_health
 	GameManager.boss_max_health = boss_max_health
-	
+
 	start_position = global_position
 	detection_area.body_entered.connect(_on_detection_area_body_entered)
 	detection_area.body_exited.connect(_on_detection_area_body_exited)
-	
-	# Assign the health bar directly
-	GameManager.boss_health_ui = $BossHealthBar/ProgressBar
+
+
+	GameManager.boss_health_ui = $BossHealthBar / ProgressBar
 	print("✅ Boss health UI assigned!")
 	GameManager.update_boss_health_label()
-		
+
 func _physics_process(delta):
-	# Apply gravity
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
-	# Update sprite based on movement
+
+
 	update_sprite_animation()
 
 func _on_detection_area_body_entered(body: Node2D):
@@ -66,7 +66,7 @@ func is_player_detected() -> bool:
 
 func get_random_wander_position() -> Vector2:
 	var random_offset = Vector2(
-		randf_range(-wander_range, wander_range),
+		randf_range( - wander_range, wander_range), 
 		0
 	)
 	return start_position + random_offset
@@ -74,32 +74,32 @@ func get_random_wander_position() -> Vector2:
 func update_sprite_animation():
 	if not animated_sprite:
 		return
-	
-	# Do NOT interrupt special animations
+
+
 	if animated_sprite.animation == "meteor":
 		return
-	
-	# Determine animation prefix based on phase
+
+
 	var anim_prefix = ""
 	if current_phase == 2:
 		anim_prefix = "2_"
-	
-	# Check if moving horizontally
-	var is_moving = abs(velocity.x) > 5.0  # Small threshold to avoid jitter
-	
+
+
+	var is_moving = abs(velocity.x) > 5.0
+
 	if is_moving:
-		# Play walking animation with phase prefix
+
 		var walk_anim = anim_prefix + "walk"
 		if animated_sprite.animation != walk_anim:
 			animated_sprite.play(walk_anim)
-		
-		# Flip sprite based on direction
-		if velocity.x < 0:  # Moving left
+
+
+		if velocity.x < 0:
 			animated_sprite.flip_h = true
-		elif velocity.x > 0:  # Moving right
+		elif velocity.x > 0:
 			animated_sprite.flip_h = false
 	else:
-		# Play idle animation with phase prefix
+
 		var idle_anim = anim_prefix + "idle"
 		if animated_sprite.animation != idle_anim:
 			animated_sprite.play(idle_anim)
@@ -110,40 +110,41 @@ func start_battle():
 	battle_started = true
 
 func on_hit_by_fireball():
-	take_damage(damage_types.fireball)  # Fireball does 1 damage
-	
+	take_damage(damage_types.fireball)
+
 func on_hit_by_flame():
-	take_damage(damage_types.flame)  # Flame does 2 damage
+	take_damage(damage_types.flame)
 
 func take_damage(amount: int):
 	boss_health -= amount
+	GameManager.boss_total_damage_taken += amount
 
-	
-	# Update the health UI
+
 	GameManager.boss_health = boss_health
 	GameManager.update_boss_health_label()
-	
+
 	if boss_health <= boss_max_health / 2 and current_phase == 1:
 		enter_second_phase()
-	
-	# Check if boss is defeated
+
+
 	if boss_health <= 0:
 		die()
 
 func die():
-	queue_free()
+	velocity.y = - 200
+	$AnimatedSprite2D.play("die")
 	GameManager.show_victory_screen()
 
-# phase 2 actions
+
 func enter_second_phase():
 	print("Boss in Phase 2")
 	current_phase = 2
 	phase2_meteor_timer.start()
 	fire_ground.visible = true
-	fire_ground.set_deferred("monitoring", true)  # Enable Area2D detection
+	fire_ground.set_deferred("monitoring", true)
 	fire_ground.set_deferred("monitorable", true)
-	
-func _on_phase_2_meteor_timer_timeout() -> void:
+
+func _on_phase_2_meteor_timer_timeout() -> void :
 	if not player:
 		return
 	var meteor = meteor_scene.instantiate()

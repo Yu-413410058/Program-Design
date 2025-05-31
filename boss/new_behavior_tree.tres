@@ -1,39 +1,39 @@
 [gd_resource type="BehaviorTree" load_steps=31 format=3 uid="uid://d38g2y31fvvkp"]
 
-[ext_resource type="Script" path="res://ai/tasks/check_player_in_range.gd" id="1_8lnpk"]
-[ext_resource type="Script" path="res://ai/tasks/BattleAreaEntered.gd" id="2_8dnaq"]
-[ext_resource type="Script" path="res://ai/tasks/HealAndRetreat.gd" id="2_aad0s"]
-[ext_resource type="Script" path="res://ai/tasks/ChasePlayer.gd" id="2_excmx"]
-[ext_resource type="Script" path="res://ai/tasks/MeleeAttack.gd" id="2_gb86d"]
-[ext_resource type="Script" path="res://ai/tasks/MeteorAttack.gd" id="2_q8geo"]
-[ext_resource type="Script" path="res://ai/tasks/SetWanderTarget.gd" id="3_4lw8d"]
-[ext_resource type="Script" path="res://ai/tasks/MoveToTarget.gd" id="4_ayex1"]
-[ext_resource type="Script" path="res://ai/tasks/2_MeleeAttack.gd" id="4_pnood"]
-[ext_resource type="Script" path="res://ai/tasks/Secondphase.gd" id="5_8c5r5"]
+[ext_resource type="Script" path="res://ai/tasks/Secondphase.gd" id="1"]
+[ext_resource type="Script" path="res://ai/tasks/BattleAreaEntered.gd" id="2"]
+[ext_resource type="Script" path="res://ai/tasks/HealAndRetreat.gd" id="3"]
+[ext_resource type="Script" path="res://ai/tasks/check_player_in_range.gd" id="4"]
+[ext_resource type="Script" path="res://ai/tasks/ChasePlayer.gd" id="5"]
+[ext_resource type="Script" path="res://ai/tasks/2_MeleeAttack.gd" id="6"]
+[ext_resource type="Script" path="res://ai/tasks/MeteorAttack.gd" id="7"]
+[ext_resource type="Script" path="res://ai/tasks/MeleeAttack.gd" id="8"]
+[ext_resource type="Script" path="res://ai/tasks/SetWanderTarget.gd" id="9"]
+[ext_resource type="Script" path="res://ai/tasks/MoveToTarget.gd" id="10"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_v20po"]
 
 [sub_resource type="BTCondition" id="BTCondition_ce0m7"]
 custom_name = "check_phase"
-script = ExtResource("5_8c5r5")
+script = ExtResource("1")
 
 [sub_resource type="BTCondition" id="BTCondition_drdhd"]
-script = ExtResource("2_8dnaq")
+script = ExtResource("2")
 
 [sub_resource type="BTAction" id="BTAction_oec4b"]
-script = ExtResource("2_aad0s")
+script = ExtResource("3")
 retreat_speed = 50.0
 heal_delay = 2.0
 heal_amount = 5
 
 [sub_resource type="BTCondition" id="BTCondition_35isl"]
-script = ExtResource("1_8lnpk")
+script = ExtResource("4")
 
 [sub_resource type="BTInvert" id="BTInvert_2ichl"]
 children = [SubResource("BTCondition_35isl")]
 
 [sub_resource type="BTAction" id="BTAction_sovko"]
-script = ExtResource("2_excmx")
+script = ExtResource("5")
 chase_speed = 100.0
 
 [sub_resource type="BTSequence" id="BTSequence_cxtut"]
@@ -41,7 +41,7 @@ custom_name = "Chase"
 children = [SubResource("BTInvert_2ichl"), SubResource("BTAction_sovko")]
 
 [sub_resource type="BTAction" id="BTAction_ox8c0"]
-script = ExtResource("4_pnood")
+script = ExtResource("6")
 jump_force = 500.0
 float_duration = 0.3
 ground_wait_duration = 0.5
@@ -61,14 +61,14 @@ custom_name = "phase_2"
 children = [SubResource("BTCondition_ce0m7"), SubResource("BTCondition_drdhd"), SubResource("BTRandomSelector_s53hb")]
 
 [sub_resource type="BTCondition" id="BTCondition_54fhg"]
-script = ExtResource("1_8lnpk")
+script = ExtResource("4")
 
 [sub_resource type="BTAction" id="BTAction_c8qbg"]
-script = ExtResource("2_q8geo")
+script = ExtResource("7")
 wait_time = 2.0
 
 [sub_resource type="BTAction" id="BTAction_s484r"]
-script = ExtResource("2_gb86d")
+script = ExtResource("8")
 jump_force = 300.0
 float_duration = 0.5
 ground_wait_duration = 0.5
@@ -80,10 +80,10 @@ custom_name = "phase_1"
 children = [SubResource("BTCondition_54fhg"), SubResource("BTAction_c8qbg"), SubResource("BTAction_s484r")]
 
 [sub_resource type="BTAction" id="BTAction_hld6c"]
-script = ExtResource("3_4lw8d")
+script = ExtResource("9")
 
 [sub_resource type="BTAction" id="BTAction_sonel"]
-script = ExtResource("4_ayex1")
+script = ExtResource("10")
 speed_multiplier = 1.0
 tolerance = 10.0
 

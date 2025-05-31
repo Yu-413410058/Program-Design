@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctdnqtgj3c1hd"
+path="res://.godot/imported/Frolic (Curb Your Enthusiasm Theme) - Luciano Michelini (youtube, c-fUGBfJHCY).mp3-b7d27633bc87171c3c8edf9fc5a239a8.mp3str"
+
+[deps]
+
+source_file="res://scenes/sounds/Frolic (Curb Your Enthusiasm Theme) - Luciano Michelini (youtube, c-fUGBfJHCY).mp3"
+dest_files=["res://.godot/imported/Frolic (Curb Your Enthusiasm Theme) - Luciano Michelini (youtube, c-fUGBfJHCY).mp3-b7d27633bc87171c3c8edf9fc5a239a8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

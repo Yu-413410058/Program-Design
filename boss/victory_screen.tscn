@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcx7nnltne0y0"]
+
+[ext_resource type="Theme" uid="uid://hj75ajb7427x" path="res://pause_ui/pause_theme.tres" id="1"]
+[ext_resource type="Script" path="res://boss/victory_screen.gd" id="2"]
+[ext_resource type="FontFile" uid="uid://dpqx75h45ec2v" path="res://scenes/fonts/PixelOperator8-Bold.ttf" id="3"]
+[ext_resource type="AudioStream" uid="uid://dv6ljh4ebfqjn" path="res://scenes/music/time_for_adventure.mp3" id="4"]
+
+[node name="VictoryScreen" type="Control" groups=["victory_screen"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.575, 0.575)
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="UI" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = -851.0
+offset_bottom = -482.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.88, 3.88)
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.1
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 15
+text = "Boss Deafeated!"
+
+[node name="GridContainer" type="GridContainer" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.5
+
+[node name="Time" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 10
+text = "Total Time:"
+
+[node name="TimeValue" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 10
+text = "12:34"
+
+[node name="Death" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 10
+text = "Total Deaths:"
+
+[node name="DeathValue" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 10
+text = "87"
+
+[node name="DamageTaken" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 10
+text = "Player Damage Taken:"
+
+[node name="DamageTakenValue" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 10
+text = "42"
+
+[node name="BossTakenDamge" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 10
+text = "Boss Taken  Damage:"
+
+[node name="BossTakenDamageValue" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 10
+text = "69"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 650.0
+color = Color(0.21, 0.21, 0.21, 0.529412)
+
+[node name="VictoryMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4")

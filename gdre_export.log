@@ -1,0 +1,106 @@
+GDRE Tools v1.00-beta.3
+Windows 10.0.26100, NVIDIA GeForce RTX 4060, opengl3
+Opening file: D:/dino_export_exes/dino_demo_2.exe
+Verified 584 files, no errors detected!
+Extracted 584 files, no errors detected!
+Recreating plugin configs...
+Exporting resources in parallel...
+Saved project config project.godot.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     63
+Failed scripts:                         0
+Imported resources for export session:  289
+Successfully converted:                 289
+Lossy:                                  68
+Rewrote metadata:                       159
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+The following files were converted from an import that was stored lossy.
+You may lose fidelity when re-importing these files upon loading the project.
+res://.godot/imported/0101742cbe6cb6328f8f0d6b38f0cd91.jpeg-e7ddb54709681de37f8ee112ecaf71b0.ctex to res://Sprites/0101742cbe6cb6328f8f0d6b38f0cd91.jpeg
+res://.godot/imported/1748711527515.jpg-4ae9c2de83816cc54817a9f1e7c7dee0.ctex to res://Sprites/1748711527515.jpg
+res://.godot/imported/BTAction.svg-a43c04a25802778fc1e8d98b5915e67c.ctex to res://addons/limboai/icons/BTAction.svg
+res://.godot/imported/BTAlwaysFail.svg-9a4e083bd8ff0d6d8240b50ae0d4cea0.ctex to res://addons/limboai/icons/BTAlwaysFail.svg
+res://.godot/imported/BTAlwaysSucceed.svg-c8181e2fd85d1e2ad00a6c8e813e7a94.ctex to res://addons/limboai/icons/BTAlwaysSucceed.svg
+res://.godot/imported/BTAwaitAnimation.svg-d8d736b3e349e2f77119fde575996909.ctex to res://addons/limboai/icons/BTAwaitAnimation.svg
+res://.godot/imported/BTCallMethod.svg-f41bac2a2119be3591af9424d2c32d9a.ctex to res://addons/limboai/icons/BTCallMethod.svg
+res://.godot/imported/BTCheckAgentProperty.svg-2ed4c1d109d23a5287ed6f1262e23f15.ctex to res://addons/limboai/icons/BTCheckAgentProperty.svg
+res://.godot/imported/BTCheckTrigger.svg-79349468c66ee41b0a126720f8ecda55.ctex to res://addons/limboai/icons/BTCheckTrigger.svg
+res://.godot/imported/BTCheckVar.svg-7b3af543bb4450e9a6d56df48f06064e.ctex to res://addons/limboai/icons/BTCheckVar.svg
+res://.godot/imported/BTComment.svg-84a811fb1f7563bc02c1f584b4085d5c.ctex to res://addons/limboai/icons/BTComment.svg
+res://.godot/imported/BTCondition.svg-546aa4361ccfe650098b5f6867299d1a.ctex to res://addons/limboai/icons/BTCondition.svg
+res://.godot/imported/BTConsolePrint.svg-4190426bb73da16c143878c233af4bc3.ctex to res://addons/limboai/icons/BTConsolePrint.svg
+res://.godot/imported/BTCooldown.svg-b168adee5e8762abc08102408ea327d5.ctex to res://addons/limboai/icons/BTCooldown.svg
+res://.godot/imported/BTDecorator.svg-dae9ebd6f4667ba4d2ac62518ef141d6.ctex to res://addons/limboai/icons/BTDecorator.svg
+res://.godot/imported/BTDelay.svg-1eb814224ebee27c668e10a73d85b845.ctex to res://addons/limboai/icons/BTDelay.svg
+res://.godot/imported/BTDynamicSelector.svg-d88a1aa9fb8d8826b74e69dad4c99f54.ctex to res://addons/limboai/icons/BTDynamicSelector.svg
+res://.godot/imported/BTDynamicSequence.svg-d2b6a83c37a1553bc168a9837ae0cb1d.ctex to res://addons/limboai/icons/BTDynamicSequence.svg
+res://.godot/imported/BTEvaluateExpression.svg-d9edc0d3cf9dd54c6a34ffc8a23bf8e3.ctex to res://addons/limboai/icons/BTEvaluateExpression.svg
+res://.godot/imported/BTFail.svg-0440819265455ee47b2cf2ca8f1b8018.ctex to res://addons/limboai/icons/BTFail.svg
+res://.godot/imported/BTForEach.svg-4ca6daee422cda100144e3414286df7f.ctex to res://addons/limboai/icons/BTForEach.svg
+res://.godot/imported/BTInvert.svg-19687b5c798f968b9610763066baa2a0.ctex to res://addons/limboai/icons/BTInvert.svg
+res://.godot/imported/BTNewScope.svg-d536a90c30773badb76653d8c928cfe0.ctex to res://addons/limboai/icons/BTNewScope.svg
+res://.godot/imported/BTParallel.svg-54126e7f374b26a890ddd82c580db45c.ctex to res://addons/limboai/icons/BTParallel.svg
+res://.godot/imported/BTPauseAnimation.svg-e1bc0cf7bcd45a0faa047192242d174b.ctex to res://addons/limboai/icons/BTPauseAnimation.svg
+res://.godot/imported/BTPlayAnimation.svg-8821f3b3413b9b328414add0e843468c.ctex to res://addons/limboai/icons/BTPlayAnimation.svg
+res://.godot/imported/BTPlayer.svg-ed7adc3cf4a0f3daa1e17a1a77e9a3a2.ctex to res://addons/limboai/icons/BTPlayer.svg
+res://.godot/imported/BTProbability.svg-f691fbf51ca49bc268a17742b1e04985.ctex to res://addons/limboai/icons/BTProbability.svg
+res://.godot/imported/BTProbabilitySelector.svg-30f59f4e802f72a701d9d31f605a64f2.ctex to res://addons/limboai/icons/BTProbabilitySelector.svg
+res://.godot/imported/BTRandomSelector.svg-4bae5a6e3e1affdd4952e8bff4c018ff.ctex to res://addons/limboai/icons/BTRandomSelector.svg
+res://.godot/imported/BTRandomSequence.svg-85ce4b080ec904d340a807de2669110d.ctex to res://addons/limboai/icons/BTRandomSequence.svg
+res://.godot/imported/BTRandomWait.svg-14f03a0fb52c993ec1cdbb780d9dfea3.ctex to res://addons/limboai/icons/BTRandomWait.svg
+res://.godot/imported/BTRepeat.svg-ca1efcf8bdef890d4575f2bf66ba0a8d.ctex to res://addons/limboai/icons/BTRepeat.svg
+res://.godot/imported/BTRepeatUntilFailure.svg-97ff99132cb6b229bb78050959a89118.ctex to res://addons/limboai/icons/BTRepeatUntilFailure.svg
+res://.godot/imported/BTRepeatUntilSuccess.svg-160e74b6885a57a745db349d6f7004a8.ctex to res://addons/limboai/icons/BTRepeatUntilSuccess.svg
+res://.godot/imported/BTRunLimit.svg-eb80a597bf9102a626f8c0e9663703d1.ctex to res://addons/limboai/icons/BTRunLimit.svg
+res://.godot/imported/BTSelector.svg-859c7746bc77c632d2a60052d2e96cf0.ctex to res://addons/limboai/icons/BTSelector.svg
+res://.godot/imported/BTSequence.svg-3dfd257b3424273ac1ea2f8a48dab7b6.ctex to res://addons/limboai/icons/BTSequence.svg
+res://.godot/imported/BTSetAgentProperty.svg-8183ecffb47d990ae67daaad34563dc5.ctex to res://addons/limboai/icons/BTSetAgentProperty.svg
+res://.godot/imported/BTSetVar.svg-a8c4f135c2df6bc3f587cbd9f1fe2d95.ctex to res://addons/limboai/icons/BTSetVar.svg
+res://.godot/imported/BTState.svg-71220d904fcc42cc20dd0af8145f86a0.ctex to res://addons/limboai/icons/BTState.svg
+res://.godot/imported/BTStopAnimation.svg-ea88498cd747a6218f7853f6be3ded34.ctex to res://addons/limboai/icons/BTStopAnimation.svg
+res://.godot/imported/BTSubtree.svg-aa8f2ece5e71aca9132a08c7af1c1ce5.ctex to res://addons/limboai/icons/BTSubtree.svg
+res://.godot/imported/BTTimeLimit.svg-ea3ca26eeb5c2b59f3fdb6e806985f3b.ctex to res://addons/limboai/icons/BTTimeLimit.svg
+res://.godot/imported/BTWait.svg-2a5d27d0c617861f027b2e66516aa5bf.ctex to res://addons/limboai/icons/BTWait.svg
+res://.godot/imported/BTWaitTicks.svg-85a005f86874f6811423163f3f5673b2.ctex to res://addons/limboai/icons/BTWaitTicks.svg
+res://.godot/imported/BehaviorTree.svg-9b40a8b5e1feb368d9f11b0fb1785cca.ctex to res://addons/limboai/icons/BehaviorTree.svg
+res://.godot/imported/BehaviorTreeView.svg-15f9bfa321ed4a264ed8404fd13b53fc.ctex to res://addons/limboai/icons/BehaviorTreeView.svg
+res://.godot/imported/BlackboardPlan.svg-9029b7aa87de8b935d9cad63480a6a16.ctex to res://addons/limboai/icons/BlackboardPlan.svg
+res://.godot/imported/LimboAI.svg-06efe3b51f2fc280e33c37672e174b5e.ctex to res://addons/limboai/icons/LimboAI.svg
+res://.godot/imported/LimboDeselectAll.svg-72ebb41c0238cae163a7bf3fc821e6ad.ctex to res://addons/limboai/icons/LimboDeselectAll.svg
+res://.godot/imported/LimboEditBlackboard.svg-eacd7cf985d654974a99a4009ffcc125.ctex to res://addons/limboai/icons/LimboEditBlackboard.svg
+res://.godot/imported/LimboExtraBlackboard.svg-45ef3f1dea682b1da438186cfcc0f47b.ctex to res://addons/limboai/icons/LimboExtraBlackboard.svg
+res://.godot/imported/LimboExtraClock.svg-840321103249948265bce58e6fb69483.ctex to res://addons/limboai/icons/LimboExtraClock.svg
+res://.godot/imported/LimboExtraVariable.svg-dc718672cf9e469886aa48452fdda7b0.ctex to res://addons/limboai/icons/LimboExtraVariable.svg
+res://.godot/imported/LimboExtractSubtree.svg-84e8d198d3be4b2b8d625d3621368079.ctex to res://addons/limboai/icons/LimboExtractSubtree.svg
+res://.godot/imported/LimboHSM.svg-28cca67d246d589dd15402abd78a1ec2.ctex to res://addons/limboai/icons/LimboHSM.svg
+res://.godot/imported/LimboPercent.svg-00733fc19fb3bbe7f8396b1f07a89da0.ctex to res://addons/limboai/icons/LimboPercent.svg
+res://.godot/imported/LimboSelectAll.svg-db7b91d0d0b530b8e41c9d3772e60fab.ctex to res://addons/limboai/icons/LimboSelectAll.svg
+res://.godot/imported/LimboState.svg-b1db06d5ed3101ee6256deae4330f6b7.ctex to res://addons/limboai/icons/LimboState.svg
+res://.godot/imported/LimboVarAdd.svg-101bcdd036315254e4b61e13747c0788.ctex to res://addons/limboai/icons/LimboVarAdd.svg
+res://.godot/imported/LimboVarEmpty.svg-3014256fb5cd566cab45b3327d98988d.ctex to res://addons/limboai/icons/LimboVarEmpty.svg
+res://.godot/imported/LimboVarError.svg-d9f1ab3e5b2cbb6e0013b65ddb23c1cf.ctex to res://addons/limboai/icons/LimboVarError.svg
+res://.godot/imported/LimboVarExists.svg-20d2e0b4a7a064b9c6d2cc44711570dd.ctex to res://addons/limboai/icons/LimboVarExists.svg
+res://.godot/imported/LimboVarNotFound.svg-fce88dc2c01e17a54455124e43955f9d.ctex to res://addons/limboai/icons/LimboVarNotFound.svg
+res://.godot/imported/LimboVarPrivate.svg-99b4229567f7f98cdabf892099c91da2.ctex to res://addons/limboai/icons/LimboVarPrivate.svg
+res://.godot/imported/icon.svg-e526cd5ce5fe587ad30e60477eb51fdf.ctex to res://demo/assets/icon.svg
+res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex to res://icon.svg
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.3.0 to edit the project.
+Note: the project may be using a custom version of Godot. Detection for this has not been implemented yet.
+If you find that you have many non-import errors upon opening the project 
+(i.e. scripts or shaders have many errors), use the original game's binary as the export template.
+
+*******************************************************************************
+

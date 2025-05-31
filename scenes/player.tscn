@@ -1,28 +1,28 @@
 [gd_scene load_steps=15 format=3 uid="uid://di4oxenppua6a"]
 
-[ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_ho20w"]
-[ext_resource type="Texture2D" uid="uid://dkgt8c2o0mu27" path="res://Sprites/Dino_Idle.png" id="1_mhfes"]
-[ext_resource type="PackedScene" uid="uid://bea7k1trf14rb" path="res://scenes/shadow.tscn" id="2_2hcq0"]
-[ext_resource type="Texture2D" uid="uid://nmor57ki30dt" path="res://Sprites/Dino_Death.png" id="3_2uglk"]
-[ext_resource type="PackedScene" uid="uid://4omt5kolc1gm" path="res://scenes/fireball.tscn" id="3_pced2"]
-[ext_resource type="Texture2D" uid="uid://c2xulyqcx6rvc" path="res://Sprites/Dino_Run01.png" id="3_s2ivf"]
-[ext_resource type="Texture2D" uid="uid://cr306i4eq6pkr" path="res://Sprites/Dino_Run02.png" id="4_dffmy"]
-[ext_resource type="PackedScene" uid="uid://dy2cthr0bbfwd" path="res://scenes/flame.tscn" id="4_rom1x"]
+[ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bea7k1trf14rb" path="res://scenes/shadow.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://4omt5kolc1gm" path="res://scenes/fireball.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dy2cthr0bbfwd" path="res://scenes/flame.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://nmor57ki30dt" path="res://Sprites/Dino_Death.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dkgt8c2o0mu27" path="res://Sprites/Dino_Idle.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c2xulyqcx6rvc" path="res://Sprites/Dino_Run01.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cr306i4eq6pkr" path="res://Sprites/Dino_Run02.png" id="8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jevf2"]
-atlas = ExtResource("3_2uglk")
+atlas = ExtResource("5")
 region = Rect2(0, 0, 88, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_megc2"]
-atlas = ExtResource("1_mhfes")
+atlas = ExtResource("6")
 region = Rect2(0, 0, 88, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0sn1"]
-atlas = ExtResource("3_s2ivf")
+atlas = ExtResource("7")
 region = Rect2(0, 0, 88, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qh6s"]
-atlas = ExtResource("4_dffmy")
+atlas = ExtResource("8")
 region = Rect2(0, 0, 88, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uha83"]
@@ -61,10 +61,10 @@ radius = 2.0
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 5
 collision_layer = 2
-script = ExtResource("1_ho20w")
-shadow_node = ExtResource("2_2hcq0")
-fireball_scene = ExtResource("3_pced2")
-flame_scene = ExtResource("4_rom1x")
+script = ExtResource("1")
+shadow_node = ExtResource("2")
+fireball_scene = ExtResource("3")
+flame_scene = ExtResource("4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -9)

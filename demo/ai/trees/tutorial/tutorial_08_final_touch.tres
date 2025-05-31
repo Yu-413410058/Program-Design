@@ -1,12 +1,12 @@
-[gd_resource type="BehaviorTree" load_steps=52 format=3 uid="uid://dp0cglcytwcj5"]
+[gd_resource type="BehaviorTree" load_steps=52 format=4 uid="uid://dp0cglcytwcj5"]
 
-[ext_resource type="Script" path="res://demo/ai/tasks/get_first_in_group.gd" id="1_o5ahw"]
-[ext_resource type="Script" path="res://demo/ai/tasks/select_flanking_pos.gd" id="2_er25a"]
-[ext_resource type="Script" path="res://demo/ai/tasks/arrive_pos.gd" id="3_ed1xo"]
-[ext_resource type="Script" path="res://demo/ai/tasks/face_target.gd" id="4_128ei"]
-[ext_resource type="Script" path="res://demo/ai/tasks/in_range.gd" id="5_er18b"]
-[ext_resource type="Script" path="res://demo/ai/tasks/back_away.gd" id="6_1urfq"]
-[ext_resource type="Script" path="res://demo/ai/tasks/pursue.gd" id="7_ekws5"]
+[ext_resource type="Script" path="res://demo/ai/tasks/get_first_in_group.gd" id="1"]
+[ext_resource type="Script" path="res://demo/ai/tasks/in_range.gd" id="2"]
+[ext_resource type="Script" path="res://demo/ai/tasks/face_target.gd" id="3"]
+[ext_resource type="Script" path="res://demo/ai/tasks/back_away.gd" id="4"]
+[ext_resource type="Script" path="res://demo/ai/tasks/select_flanking_pos.gd" id="5"]
+[ext_resource type="Script" path="res://demo/ai/tasks/arrive_pos.gd" id="6"]
+[ext_resource type="Script" path="res://demo/ai/tasks/pursue.gd" id="7"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ewfwq"]
 var/speed/name = &"speed"
@@ -16,7 +16,7 @@ var/speed/hint = 1
 var/speed/hint_string = "10,1000,10"
 
 [sub_resource type="BTAction" id="BTAction_2murg"]
-script = ExtResource("1_o5ahw")
+script = ExtResource("1")
 group = &"player"
 output_var = &"target"
 
@@ -24,13 +24,13 @@ output_var = &"target"
 children = [SubResource("BTAction_2murg")]
 
 [sub_resource type="BTCondition" id="BTCondition_m15aa"]
-script = ExtResource("5_er18b")
+script = ExtResource("2")
 distance_min = 0.0
 distance_max = 200.0
 target_var = &"target"
 
 [sub_resource type="BTAction" id="BTAction_oc76s"]
-script = ExtResource("4_128ei")
+script = ExtResource("3")
 target_var = &"target"
 
 [sub_resource type="BBNode" id="BBNode_6d0yy"]
@@ -55,11 +55,11 @@ animation_name = &"attack_2"
 children = [SubResource("BTCondition_m15aa"), SubResource("BTAction_oc76s"), SubResource("BTPlayAnimation_wsspf"), SubResource("BTPlayAnimation_d2lad")]
 
 [sub_resource type="BTCooldown" id="BTCooldown_3tvjt"]
-children = [SubResource("BTSequence_e0f8v")]
 duration = 5.0
+children = [SubResource("BTSequence_e0f8v")]
 
 [sub_resource type="BTCondition" id="BTCondition_x0uu7"]
-script = ExtResource("5_er18b")
+script = ExtResource("2")
 distance_min = 0.0
 distance_max = 200.0
 target_var = &"target"
@@ -73,13 +73,13 @@ animation_player = SubResource("BBNode_wksgd")
 animation_name = &"walk"
 
 [sub_resource type="BTAction" id="BTAction_6q0k4"]
-script = ExtResource("6_1urfq")
+script = ExtResource("4")
 speed_var = &"speed"
 max_angle_deviation = 0.7
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_6eii7"]
-children = [SubResource("BTAction_6q0k4")]
 time_limit = 2.0
+children = [SubResource("BTAction_6q0k4")]
 
 [sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_ieord"]
 children = [SubResource("BTTimeLimit_6eii7")]
@@ -99,7 +99,7 @@ duration = 3.0
 children = [SubResource("BTCondition_x0uu7"), SubResource("BTPlayAnimation_umlwj"), SubResource("BTAlwaysSucceed_ieord"), SubResource("BTPlayAnimation_l1tdg"), SubResource("BTWait_hh8ys")]
 
 [sub_resource type="BTAction" id="BTAction_n0rxm"]
-script = ExtResource("2_er25a")
+script = ExtResource("5")
 target_var = &"target"
 flank_side = 0
 range_min = 400
@@ -115,14 +115,14 @@ animation_player = SubResource("BBNode_icf24")
 animation_name = &"walk"
 
 [sub_resource type="BTAction" id="BTAction_g2up4"]
-script = ExtResource("3_ed1xo")
+script = ExtResource("6")
 target_position_var = &"pos"
 speed_var = &"speed"
 tolerance = 50.0
 avoid_var = &""
 
 [sub_resource type="BTAction" id="BTAction_d5lkr"]
-script = ExtResource("4_128ei")
+script = ExtResource("3")
 target_var = &"target"
 
 [sub_resource type="BBNode" id="BBNode_h4k80"]
@@ -156,11 +156,11 @@ method = &"throw_ninja_star"
 children = [SubResource("BTAction_n0rxm"), SubResource("BTPlayAnimation_iiei3"), SubResource("BTAction_g2up4"), SubResource("BTAction_d5lkr"), SubResource("BTPlayAnimation_40yja"), SubResource("BTWait_2dc1v"), SubResource("BTPlayAnimation_qnpjq"), SubResource("BTCallMethod_yd0fn")]
 
 [sub_resource type="BTProbability" id="BTProbability_omklt"]
-children = [SubResource("BTSequence_ws7nq")]
 run_chance = 0.25
+children = [SubResource("BTSequence_ws7nq")]
 
 [sub_resource type="BTCondition" id="BTCondition_d6aub"]
-script = ExtResource("5_er18b")
+script = ExtResource("2")
 distance_min = 200.0
 distance_max = 10000.0
 target_var = &"target"
@@ -174,7 +174,7 @@ animation_player = SubResource("BBNode_rpwld")
 animation_name = &"walk"
 
 [sub_resource type="BTAction" id="BTAction_wc11r"]
-script = ExtResource("7_ekws5")
+script = ExtResource("7")
 target_var = &"target"
 speed_var = &"speed"
 approach_distance = 100.0

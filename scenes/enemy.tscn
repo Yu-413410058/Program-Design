@@ -1,16 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqx3c3f2us10r"]
+[gd_scene load_steps=9 format=4 uid="uid://dqx3c3f2us10r"]
 
-[ext_resource type="Script" path="res://scenes/scripts/enemy.gd" id="1_8dcar"]
-[ext_resource type="Texture2D" uid="uid://dwvbfa7t4u2yq" path="res://Sprites/Bird_01.png" id="1_bi15u"]
-[ext_resource type="Texture2D" uid="uid://d2pjwt8p5evjx" path="res://Sprites/Bird_02.png" id="2_etj2j"]
-[ext_resource type="PackedScene" uid="uid://bw2yox00m8q4m" path="res://scenes/killzone.tscn" id="3_aednm"]
+[ext_resource type="Script" path="res://scenes/scripts/enemy.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dwvbfa7t4u2yq" path="res://Sprites/Bird_01.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://d2pjwt8p5evjx" path="res://Sprites/Bird_02.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://bw2yox00m8q4m" path="res://scenes/killzone.tscn" id="4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgav7"]
-atlas = ExtResource("1_bi15u")
+atlas = ExtResource("2")
 region = Rect2(0, 0, 92, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3dcpy"]
-atlas = ExtResource("2_etj2j")
+atlas = ExtResource("3")
 region = Rect2(0, 0, 92, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4ih6h"]
@@ -32,15 +32,15 @@ size = Vector2(218.75, 109.375)
 
 [node name="bird" type="Node2D" groups=["enemies"]]
 scale = Vector2(0.4, 0.4)
-script = ExtResource("1_8dcar")
+script = ExtResource("1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_4ih6h")
 autoplay = "default"
-frame_progress = 0.313211
+frame_progress = 0.31321099400520325
 
-[node name="killzone" parent="." groups=["enemies"] instance=ExtResource("3_aednm")]
+[node name="killzone" parent="." groups=["enemies"] instance=ExtResource("4")]
 scale = Vector2(0.4, 0.4)
 collision_mask = 2
 
