@@ -1,10 +1,14 @@
 extends Area2D
-@onready var boss: Boss = $"../boss"
 
-func _on_body_entered(body: Node2D) -> void:
+var player_inside := false
+
+
+func _on_body_entered(body):
 	if body.is_in_group("player"):
-		print("🔔 Battle triggered!")
-		boss.start_battle()
-		
-		# Optional: disable the trigger after it's activated once
-		monitoring = false
+		player_inside = true
+		print("Player entered battle area")
+
+func _on_body_exited(body):
+	if body.is_in_group("player"):
+		player_inside = false
+		print("Player exited battle area")

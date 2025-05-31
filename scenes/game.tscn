@@ -641,22 +641,18 @@ transform = Transform2D(1.8, 0, 0, 1.8, 0, 0)
 
 [node name="health_ui" parent="UI" instance=ExtResource("8_mlyvv")]
 
-[node name="BattleTrigger" type="Area2D" parent="."]
-visible = false
-collision_layer = 4
+[node name="BattleArea" type="Area2D" parent="."]
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("13_cdxtj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleTrigger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleArea"]
 position = Vector2(-895.5, -26.5)
 shape = SubResource("RectangleShape2D_wlk4k")
 
 [node name="fire_ground" parent="." instance=ExtResource("14_u4dn6")]
-visible = false
 position = Vector2(-893, 39)
 scale = Vector2(0.37, 0.37)
-collision_layer = 0
-collision_mask = 2
 
 [connection signal="body_entered" from="windy_platform/1" to="windy_platform/1" method="_on_body_entered"]
 [connection signal="body_exited" from="windy_platform/1" to="windy_platform/1" method="_on_body_exited"]
@@ -664,3 +660,5 @@ collision_mask = 2
 [connection signal="body_exited" from="lava_platform/lava" to="lava_platform/lava" method="_on_body_exited"]
 [connection signal="timeout" from="lava_platform/lava/Timer" to="lava_platform/lava" method="_on_timer_timeout"]
 [connection signal="body_entered" from="check point/checkpoint" to="check point/checkpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="BattleArea" to="BattleArea" method="_on_body_entered"]
+[connection signal="body_exited" from="BattleArea" to="BattleArea" method="_on_body_exited"]

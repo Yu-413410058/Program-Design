@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cndi8lb1l1o74"]
+[gd_scene load_steps=8 format=3 uid="uid://cndi8lb1l1o74"]
 
+[ext_resource type="Script" path="res://boss/fire.gd" id="1_irshn"]
 [ext_resource type="Texture2D" uid="uid://dm76me641iu1k" path="res://Sprites/Fire-Pixel-Art-Animation-Sprites2.png" id="1_sprr1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlmge"]
@@ -35,10 +36,15 @@ animations = [{
 }]
 
 [node name="Area2D" type="Area2D"]
+visible = false
 scale = Vector2(0.27, 0.27)
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+script = ExtResource("1_irshn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-12, 31)
 shape = SubResource("RectangleShape2D_qlmge")
 
@@ -46,3 +52,10 @@ shape = SubResource("RectangleShape2D_qlmge")
 sprite_frames = SubResource("SpriteFrames_jkr14")
 autoplay = "default"
 frame_progress = 0.845241
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

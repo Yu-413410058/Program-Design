@@ -33,7 +33,7 @@ func _on_body_entered(body):
 	elif body is TileMap:
 		print("🌋 Meteor hit the ground")
 		queue_free()
-	elif body.is_in_group("boss"):
+	elif body.is_in_group("enemies"):
 		return
 		
 

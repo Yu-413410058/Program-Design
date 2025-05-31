@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddn0juvnya6gq"
-path="res://.godot/imported/crounch dino2.PNG-5e1a8349be44c9bfb911c6ee6c823b7f.ctex"
+uid="uid://drdob5e20imw0"
+path="res://.godot/imported/Dino2_Run02.png-281da1d80bc143a803cffd47cbe8cbdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/crounch dino2.PNG"
-dest_files=["res://.godot/imported/crounch dino2.PNG-5e1a8349be44c9bfb911c6ee6c823b7f.ctex"]
+source_file="res://Sprites/Dino2_Run02.png"
+dest_files=["res://.godot/imported/Dino2_Run02.png-281da1d80bc143a803cffd47cbe8cbdd.ctex"]
 
 [params]
 

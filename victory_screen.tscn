@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcx7nnltne0y0"]
+
+[ext_resource type="Theme" uid="uid://hj75ajb7427x" path="res://pause_ui/pause_theme.tres" id="1_nld4q"]
+[ext_resource type="FontFile" uid="uid://dpqx75h45ec2v" path="res://scenes/fonts/PixelOperator8-Bold.ttf" id="2_iavd6"]
+
+[node name="VictoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nld4q")
+
+[node name="UI" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = -851.0
+offset_bottom = -482.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.88, 3.88)
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.1
+theme_override_fonts/font = ExtResource("2_iavd6")
+theme_override_font_sizes/font_size = 15
+text = "Boss Deafeated!"
+
+[node name="GridContainer" type="GridContainer" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.5
+
+[node name="Time" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iavd6")
+theme_override_font_sizes/font_size = 10
+text = "Total Time:"
+
+[node name="TimeValue" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iavd6")
+theme_override_font_sizes/font_size = 10
+text = "12:34"
+
+[node name="Death" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iavd6")
+theme_override_font_sizes/font_size = 10
+text = "Total Deaths:"
+
+[node name="DeathValue" type="Label" parent="UI/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_iavd6")
+theme_override_font_sizes/font_size = 10
+text = "87"

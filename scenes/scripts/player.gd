@@ -209,4 +209,4 @@ func _on_heal_timer_timeout() -> void:
 	can_dash = true
 	can_heal = true
 	is_healing = false
-	GameManager.player_health += 2
+	GameManager.player_health += 3

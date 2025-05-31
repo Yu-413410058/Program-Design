@@ -1,11 +1,11 @@
 extends BTAction
-class_name BossMeleeAttack
+class_name Boss2_MeleeAttack
 
-@export var jump_force: float = 300.0
-@export var float_duration: float = 0.5
+@export var jump_force: float = 500.0
+@export var float_duration: float = 0.3
 @export var ground_wait_duration: float = 0.5
-@export var fall_speed: float = 400.0
-@export var horizontal_speed: float = 200.0
+@export var fall_speed: float = 500.0
+@export var horizontal_speed: float = 600.0
 
 var boss_body: CharacterBody2D
 var animation_sprite: AnimatedSprite2D
@@ -71,7 +71,7 @@ func _handle_jumping_phase(delta: float) -> Status:
 
 	if float_timer >= float_duration:
 		attack_phase = "falling"
-		animation_sprite.play("lie")
+		animation_sprite.play("2_lie")
 		float_timer = 0.0
 	return RUNNING
 
@@ -92,7 +92,7 @@ func _handle_floating_phase(delta: float) -> Status:
 	if float_timer >= float_duration:
 		attack_phase = "falling"
 		# Switch to lie animation and enable attack collision
-		animation_sprite.play("lie")
+		animation_sprite.play("2_lie")
 		
 		# Start falling with increased speed towards target
 		boss_body.velocity.y = fall_speed
@@ -113,7 +113,7 @@ func _handle_falling_phase(delta: float) -> Status:
 
 func _handle_ground_wait_phase(delta: float) -> Status:
 	ground_timer += delta
-	animation_sprite.play("lie")
+	animation_sprite.play("2_lie")
 	animation_sprite.position.y += 1.5
 	melee_collision.disabled = false
 	if ground_timer >= ground_wait_duration:
@@ -130,7 +130,7 @@ func _exit():
 	melee_collision.disabled = true
 	
 	# Return to idle animation
-	animation_sprite.play("idle")
+	animation_sprite.play("2_idle")
 	animation_sprite.position.y = 0
 
 	

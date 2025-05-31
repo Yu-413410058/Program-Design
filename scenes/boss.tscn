@@ -1,15 +1,36 @@
-[gd_scene load_steps=22 format=3 uid="uid://dpfsoj0njg0v8"]
+[gd_scene load_steps=31 format=3 uid="uid://dpfsoj0njg0v8"]
 
 [ext_resource type="Script" path="res://boss/boss.gd" id="1_3q8mh"]
 [ext_resource type="Texture2D" uid="uid://dkgt8c2o0mu27" path="res://Sprites/Dino_Idle.png" id="1_ebk0d"]
+[ext_resource type="Texture2D" uid="uid://dwsjtnp6ed2l3" path="res://Sprites/Dino2_Idle.png" id="2_3vy8f"]
+[ext_resource type="PackedScene" uid="uid://cmei85rgmym83" path="res://boss/meteor.tscn" id="2_bcqdr"]
 [ext_resource type="BehaviorTree" uid="uid://d38g2y31fvvkp" path="res://boss/new_behavior_tree.tres" id="2_ht6xs"]
 [ext_resource type="Texture2D" uid="uid://c2xulyqcx6rvc" path="res://Sprites/Dino_Run01.png" id="3_6tyrp"]
+[ext_resource type="Texture2D" uid="uid://brwqcfn0s5c2h" path="res://Sprites/Dino2_Run01.png" id="3_h3qqy"]
+[ext_resource type="Texture2D" uid="uid://duv4hthte381e" path="res://Sprites/Dino2_crounch.png" id="3_pqeng"]
 [ext_resource type="Texture2D" uid="uid://1x23wipm0kgs" path="res://Sprites/crounch dino5.png" id="4_bu77r"]
 [ext_resource type="Texture2D" uid="uid://6i3j3p1c5n83" path="res://Sprites/Dino_meteor.png" id="4_il0if"]
 [ext_resource type="Texture2D" uid="uid://cr306i4eq6pkr" path="res://Sprites/Dino_Run02.png" id="4_v3cyt"]
+[ext_resource type="Texture2D" uid="uid://drdob5e20imw0" path="res://Sprites/Dino2_Run02.png" id="4_vq3gb"]
 [ext_resource type="PackedScene" uid="uid://bxberkb5v4os0" path="res://boss/boss_health_bar.tscn" id="6_2a03k"]
 [ext_resource type="Script" path="res://scenes/hit_box.gd" id="7_khipf"]
 [ext_resource type="Script" path="res://scenes/melee_attack.gd" id="9_tdgv6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1eu65"]
+atlas = ExtResource("2_3vy8f")
+region = Rect2(0, 0, 88, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umdsl"]
+atlas = ExtResource("3_pqeng")
+region = Rect2(0, 0, 127, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umg1x"]
+atlas = ExtResource("3_h3qqy")
+region = Rect2(0, 0, 88, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx7bf"]
+atlas = ExtResource("4_vq3gb")
+region = Rect2(0, 0, 88, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhrgs"]
 atlas = ExtResource("1_ebk0d")
@@ -33,6 +54,33 @@ region = Rect2(0, 0, 88, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6dauo"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1eu65")
+}],
+"loop": true,
+"name": &"2_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umdsl")
+}],
+"loop": true,
+"name": &"2_lie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umg1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx7bf")
+}],
+"loop": true,
+"name": &"2_walk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dhrgs")
@@ -85,11 +133,12 @@ size = Vector2(293, 161)
 
 [node name="boss" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_3q8mh")
+meteor_scene = ExtResource("2_bcqdr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.5, 2.29494)
 sprite_frames = SubResource("SpriteFrames_6dauo")
-animation = &"idle"
+animation = &"2_lie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -146,12 +195,26 @@ disabled = true
 [node name="Timer" type="Timer" parent="MeleeAttack"]
 
 [node name="MeteorSpawnPoint" type="Marker2D" parent="."]
+visible = false
 position = Vector2(1, -339)
 
 [node name="MeteorTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
 
+[node name="Phase2MeteorTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="HealLabel" type="Label" parent="."]
+visible = false
+offset_left = -23.0
+offset_top = -225.0
+offset_right = -1.0
+offset_bottom = -202.0
+scale = Vector2(4, 4)
+text = "💜"
+
 [connection signal="timeout" from="HitBox/Timer" to="HitBox" method="_on_timer_timeout"]
 [connection signal="body_entered" from="MeleeAttack" to="MeleeAttack" method="_on_body_entered"]
 [connection signal="timeout" from="MeleeAttack/Timer" to="MeleeAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="Phase2MeteorTimer" to="." method="_on_phase_2_meteor_timer_timeout"]

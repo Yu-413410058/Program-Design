@@ -67,7 +67,6 @@ func update_boss_health_label() -> void:
 		# Set the values directly on the ProgressBar
 		GameManager.boss_health_ui.max_value = boss_max_health
 		GameManager.boss_health_ui.value = boss_health
-		print("✅ Boss health updated: ", boss_health, "/", boss_max_health)
 	else:
 		print("⚠️ boss_health_ui is null! (boss health)")
 

@@ -8,12 +8,15 @@ class_name Boss
 @export var gravity: float = 980.0
 @export var boss_max_health := 100
 var boss_health := 100
+var current_phase := 1
 
 @onready var detection_area: Area2D = $DetectionArea
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D  
 @onready var meteor_timer: Timer = $MeteorTimer
 @onready var meteor_spawn_point: Marker2D = $MeteorSpawnPoint
 @export var meteor_scene: PackedScene
+@onready var phase2_meteor_timer: Timer = $Phase2MeteorTimer
+@onready var fire_ground = get_tree().get_current_scene().get_node("fire_ground")
 
 var player: Node2D
 var start_position: Vector2
@@ -21,6 +24,11 @@ var target_position: Vector2
 var player_detected: bool = false
 var last_direction: Vector2 = Vector2.ZERO
 var battle_started: bool = false
+var damage_types := {
+	"fireball": 1,
+	"flame": 2
+}
+
 
 func _ready():
 	GameManager.boss_health = boss_health
@@ -47,13 +55,11 @@ func _on_detection_area_body_entered(body: Node2D):
 	if body.is_in_group("player"):
 		player = body
 		player_detected = true
-		print("Player detected!")
 
 func _on_detection_area_body_exited(body: Node2D):
 	if body.is_in_group("player"):
 		player_detected = false
 		player = null
-		print("Player lost!")
 
 func is_player_detected() -> bool:
 	return player_detected
@@ -68,17 +74,24 @@ func get_random_wander_position() -> Vector2:
 func update_sprite_animation():
 	if not animated_sprite:
 		return
+	
 	# Do NOT interrupt special animations
-	if animated_sprite.animation == "meteor" or animated_sprite.animation == "melee":
+	if animated_sprite.animation == "meteor":
 		return
+	
+	# Determine animation prefix based on phase
+	var anim_prefix = ""
+	if current_phase == 2:
+		anim_prefix = "2_"
 	
 	# Check if moving horizontally
 	var is_moving = abs(velocity.x) > 5.0  # Small threshold to avoid jitter
 	
 	if is_moving:
-		# Play walking animation
-		if animated_sprite.animation != "walk":
-			animated_sprite.play("walk")
+		# Play walking animation with phase prefix
+		var walk_anim = anim_prefix + "walk"
+		if animated_sprite.animation != walk_anim:
+			animated_sprite.play(walk_anim)
 		
 		# Flip sprite based on direction
 		if velocity.x < 0:  # Moving left
@@ -86,28 +99,32 @@ func update_sprite_animation():
 		elif velocity.x > 0:  # Moving right
 			animated_sprite.flip_h = false
 	else:
-		# Play idle animation
-		if animated_sprite.animation != "idle":
-			animated_sprite.play("idle")
+		# Play idle animation with phase prefix
+		var idle_anim = anim_prefix + "idle"
+		if animated_sprite.animation != idle_anim:
+			animated_sprite.play(idle_anim)
+
 
 func start_battle():
 	print("⚔️ Boss battle started!")
 	battle_started = true
 
-# Add these damage methods to handle attacks
 func on_hit_by_fireball():
-	take_damage(1)  # Fireball does 1 damage
+	take_damage(damage_types.fireball)  # Fireball does 1 damage
 	
 func on_hit_by_flame():
-	take_damage(2)  # Flame does 2 damage
+	take_damage(damage_types.flame)  # Flame does 2 damage
 
 func take_damage(amount: int):
 	boss_health -= amount
-	print("Boss took ", amount, " damage Health: ", boss_health, "/", boss_max_health)
+
 	
 	# Update the health UI
 	GameManager.boss_health = boss_health
 	GameManager.update_boss_health_label()
+	
+	if boss_health <= boss_max_health / 2 and current_phase == 1:
+		enter_second_phase()
 	
 	# Check if boss is defeated
 	if boss_health <= 0:
@@ -116,3 +133,29 @@ func take_damage(amount: int):
 func die():
 	queue_free()
 	GameManager.show_victory_screen()
+
+# phase 2 actions
+func enter_second_phase():
+	print("Boss in Phase 2")
+	current_phase = 2
+	phase2_meteor_timer.start()
+	fire_ground.visible = true
+	fire_ground.set_deferred("monitoring", true)  # Enable Area2D detection
+	fire_ground.set_deferred("monitorable", true)
+	
+func _on_phase_2_meteor_timer_timeout() -> void:
+	if not player:
+		return
+	var meteor = meteor_scene.instantiate()
+	meteor.global_position = meteor_spawn_point.global_position
+	meteor.target_position = player.global_position
+	if meteor.has_node("AnimatedSprite2D"):
+		var m_sprite = meteor.get_node("AnimatedSprite2D")
+		m_sprite.flip_h = (player.global_position.x < meteor_spawn_point.global_position.x)
+	get_parent().add_child(meteor)
+
+func heal_self(amount: int):
+	boss_health += amount
+	boss_health = clamp(boss_health, 0, boss_max_health)
+	GameManager.boss_health = boss_health
+	GameManager.update_boss_health_label()
