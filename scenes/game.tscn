@@ -400,7 +400,7 @@ position = Vector2(-1, 1)
 shape = SubResource("WorldBoundaryShape2D_xh23i")
 
 [node name="Player" parent="." instance=ExtResource("3")]
-position = Vector2(-741, -3272)
+position = Vector2(-731, -3276)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
