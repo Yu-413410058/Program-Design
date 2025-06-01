@@ -199,6 +199,7 @@ func save_and_sort_records():
 
 
 func reset_stats():
+	Bgm.play()
 	player_total_damage_taken = 0
 	boss_total_damage_taken = 0
 	player_deaths = 0

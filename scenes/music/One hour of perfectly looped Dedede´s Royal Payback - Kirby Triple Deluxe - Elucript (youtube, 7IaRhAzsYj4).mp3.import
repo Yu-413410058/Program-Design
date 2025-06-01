@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cu1t71l0ftrvi"
+path="res://.godot/imported/One hour of perfectly looped Dedede´s Royal Payback - Kirby Triple Deluxe - Elucript (youtube, 7IaRhAzsYj4).mp3-49a37fc75c4a9b40a252f7fc61d11bf6.mp3str"
+
+[deps]
+
+source_file="res://scenes/music/One hour of perfectly looped Dedede´s Royal Payback - Kirby Triple Deluxe - Elucript (youtube, 7IaRhAzsYj4).mp3"
+dest_files=["res://.godot/imported/One hour of perfectly looped Dedede´s Royal Payback - Kirby Triple Deluxe - Elucript (youtube, 7IaRhAzsYj4).mp3-49a37fc75c4a9b40a252f7fc61d11bf6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

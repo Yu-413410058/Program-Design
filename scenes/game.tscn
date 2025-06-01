@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://c5tpmkr73vb0p"]
+[gd_scene load_steps=34 format=4 uid="uid://c5tpmkr73vb0p"]
 
 [ext_resource type="Texture2D" uid="uid://don135l6rxgtx" path="res://scenes/Sprites/world_tileset.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://db41xot2nhnki" path="res://scenes/map_killzone.tscn" id="2"]
@@ -18,9 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://dcx7nnltne0y0" path="res://boss/victory_screen.tscn" id="16"]
 [ext_resource type="Script" path="res://boss/battle_trigger.gd" id="17"]
 [ext_resource type="PackedScene" uid="uid://cndi8lb1l1o74" path="res://boss/fire.tscn" id="18"]
-[ext_resource type="AudioStream" uid="uid://cwr3b5mhh306e" path="res://scenes/music/Koyuki 97 (SMASH) - Footage (Blue Archive) - Kokoyuki Ch. (youtube, 6L7va0F3a_E).mp3" id="18_30bkp"]
-[ext_resource type="Script" path="res://scenes/TestMusic.gd" id="19_7q2pg"]
-[ext_resource type="AudioStream" uid="uid://dm7f5ffbftasf" path="res://scenes/music/Dream Sweet in Sea Major - ミラクルミュージカル (youtube, uxyM7vhU0uU).mp3" id="20_nkjr6"]
+[ext_resource type="AudioStream" uid="uid://dxqxh3uiqekh0" path="res://scenes/music/Ruse of an Ooze - Kristofer Maddigan (youtube, gVgJ6LiyPlM).mp3" id="18_wxg5m"]
+[ext_resource type="AudioStream" uid="uid://cu1t71l0ftrvi" path="res://scenes/music/One hour of perfectly looped Dedede´s Royal Payback - Kirby Triple Deluxe - Elucript (youtube, 7IaRhAzsYj4).mp3" id="19_gpjob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xvte3"]
 texture = ExtResource("1")
@@ -370,9 +369,6 @@ size = Vector2(89, 38)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlk4k"]
 size = Vector2(317, 203)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoym8"]
-size = Vector2(957, 3111.5)
-
 [node name="Game" type="Node2D" groups=["main"]]
 position = Vector2(5, -1)
 
@@ -400,7 +396,7 @@ position = Vector2(-1, 1)
 shape = SubResource("WorldBoundaryShape2D_xh23i")
 
 [node name="Player" parent="." instance=ExtResource("3")]
-position = Vector2(-720, -3276)
+position = Vector2(-731, -3265)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
@@ -699,6 +695,7 @@ transform = Transform2D(1.8, 0, 0, 1.8, 0, 0)
 [node name="health_ui" parent="UI" instance=ExtResource("15")]
 
 [node name="VictoryScreen" parent="UI" instance=ExtResource("16")]
+visible = false
 offset_left = 0.555555
 offset_top = -1.66667
 offset_right = 0.555542
@@ -716,25 +713,18 @@ position = Vector2(-70, -3239)
 shape = SubResource("RectangleShape2D_wlk4k")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BattleArea"]
-stream = ExtResource("18_30bkp")
+stream = ExtResource("18_wxg5m")
+volume_db = -0.25
+parameters/looping = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="BattleArea"]
+stream = ExtResource("19_gpjob")
+volume_db = 2.0
 parameters/looping = true
 
 [node name="fire_ground" parent="." instance=ExtResource("18")]
 position = Vector2(-988, -3188)
 scale = Vector2(0.37, 0.37)
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-1274, 27)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("19_7q2pg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(522.5, -1520.25)
-shape = SubResource("RectangleShape2D_yoym8")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area2D"]
-stream = ExtResource("20_nkjr6")
 
 [connection signal="body_entered" from="windy_platform/1" to="windy_platform/1" method="_on_body_entered"]
 [connection signal="body_exited" from="windy_platform/1" to="windy_platform/1" method="_on_body_exited"]
@@ -745,5 +735,3 @@ stream = ExtResource("20_nkjr6")
 [connection signal="body_entered" from="check point/checkpoint2" to="check point/checkpoint2" method="_on_body_entered"]
 [connection signal="body_entered" from="BattleArea" to="BattleArea" method="_on_body_entered"]
 [connection signal="body_exited" from="BattleArea" to="BattleArea" method="_on_body_exited"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

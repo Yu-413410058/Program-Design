@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfuosglmm7oje"
+path="res://.godot/imported/Kirby music to touch grass to - Coco Jambo (youtube, DJS-r_7JDRM).mp3-089c5a64afa6d2c43e08d931c9c3c4ee.mp3str"
+
+[deps]
+
+source_file="res://scenes/music/Kirby music to touch grass to - Coco Jambo (youtube, DJS-r_7JDRM).mp3"
+dest_files=["res://.godot/imported/Kirby music to touch grass to - Coco Jambo (youtube, DJS-r_7JDRM).mp3-089c5a64afa6d2c43e08d931c9c3c4ee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

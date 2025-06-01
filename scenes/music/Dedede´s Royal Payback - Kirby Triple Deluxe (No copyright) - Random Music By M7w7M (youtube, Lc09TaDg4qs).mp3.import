@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://by0dyt5fbt1yy"
+path="res://.godot/imported/Dedede´s Royal Payback - Kirby Triple Deluxe (No copyright) - Random Music By M7w7M (youtube, Lc09TaDg4qs).mp3-d117d14932af55a72a6117544d0911bf.mp3str"
+
+[deps]
+
+source_file="res://scenes/music/Dedede´s Royal Payback - Kirby Triple Deluxe (No copyright) - Random Music By M7w7M (youtube, Lc09TaDg4qs).mp3"
+dest_files=["res://.godot/imported/Dedede´s Royal Payback - Kirby Triple Deluxe (No copyright) - Random Music By M7w7M (youtube, Lc09TaDg4qs).mp3-d117d14932af55a72a6117544d0911bf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

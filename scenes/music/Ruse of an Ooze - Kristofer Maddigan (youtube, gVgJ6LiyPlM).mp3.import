@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxqxh3uiqekh0"
+path="res://.godot/imported/Ruse of an Ooze - Kristofer Maddigan (youtube, gVgJ6LiyPlM).mp3-fc5a303a85bd1df4cbd32955eb00b799.mp3str"
+
+[deps]
+
+source_file="res://scenes/music/Ruse of an Ooze - Kristofer Maddigan (youtube, gVgJ6LiyPlM).mp3"
+dest_files=["res://.godot/imported/Ruse of an Ooze - Kristofer Maddigan (youtube, gVgJ6LiyPlM).mp3-fc5a303a85bd1df4cbd32955eb00b799.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

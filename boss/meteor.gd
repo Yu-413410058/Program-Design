@@ -2,7 +2,7 @@
 extends Area2D
 
 @export var fall_speed: = 400.0
-@export var lifetime: = 1.0
+@export var lifetime: = 0.5
 var target_position: Vector2
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer

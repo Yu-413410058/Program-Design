@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://yamjlqfql11g"]
 
-[ext_resource type="AudioStream" uid="uid://dv6ljh4ebfqjn" path="res://scenes/music/time_for_adventure.mp3" id="1"]
+[ext_resource type="AudioStream" uid="uid://bfuosglmm7oje" path="res://scenes/music/Kirby music to touch grass to - Coco Jambo (youtube, DJS-r_7JDRM).mp3" id="1_le0uh"]
 
-[node name="BGM" type="AudioStreamPlayer2D"]
-stream = ExtResource("1")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_le0uh")
 autoplay = true
