@@ -209,3 +209,8 @@ func reset_stats():
 	victory_screen = null
 	player = null
 	boss_node = null
+
+func _input(event):
+	if event.is_action_pressed("respawn"):
+		if player:
+			player.respawn()

@@ -396,7 +396,7 @@ position = Vector2(-1, 1)
 shape = SubResource("WorldBoundaryShape2D_xh23i")
 
 [node name="Player" parent="." instance=ExtResource("3")]
-position = Vector2(-731, -3265)
+position = Vector2(-284, -15)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
@@ -666,7 +666,7 @@ scale = Vector2(0.0985715, 0.0964287)
 texture = ExtResource("12")
 
 [node name="Sprite2D2" type="Sprite2D" parent="check point/checkpoint"]
-position = Vector2(1068, -954)
+position = Vector2(-1151, 35)
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("13")
 
