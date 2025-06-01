@@ -1,6 +1,6 @@
-# 🦖 Dino's Bizarre Adventure
+# Dino's Bizarre Adventure
 
-## 🎮 Game Concept
+## Background Story
 
 You play as the dinosaur from Chrome's Dino Game — but this time, it’s not just an endless runner!  
 Your mission is to overcome unique obstacles and face off against your greatest nightmare:  
@@ -8,15 +8,15 @@ Your mission is to overcome unique obstacles and face off against your greatest 
 
 ---
 
-## ✨ Game Features
+## Game Features
 
-### 🕹️ Player Controls
+### Player Controls
 
 - **Move**: `A` / `←` for Left, `D` / `→` for Right  
 - **Jump**: `W` / `Space`  
-- **Dash**: `Shift` (Grants temporary invincibility)  
+- **Dash**: `Shift` (Temporary invincibility)  
 
-### 🔥 Abilities
+### Abilities
 
 - **Fireball**: Press `1` or `J` – Deals 1 damage on hit  
 - **Flame**: Hold `2` or `K` – Deals 2 damage every 0.5s  
@@ -27,21 +27,21 @@ Your mission is to overcome unique obstacles and face off against your greatest 
 
 ---
 
-## 🧱 Special Platforms
+## Special Platforms
 
-- **🫥 Invisible Platforms**: Toggle visibility every 2 seconds  
-- **💨 Windy Platforms**: Push the player rightward continuously  
-- **🌋 Lava Platforms**: Deal 1 damage per second  
+- ** Invisible Platforms**: Toggle visibility every 2 seconds  
+- ** Windy Platforms**: Push the player rightward continuously  
+- ** Lava Platforms**: Deal 1 damage per second  
 
 ---
 
-## 🔒 Checkpoints
+##  Checkpoints
 
 - Two checkpoints are placed before the final boss to save your progress!
 
 ---
 
-## 👹 Boss Fight
+##  Boss Fight
 
 You’ll face your **shadow self** — a larger version of the dino, capable of melee attacks and summoning meteors!  
 Dodge, dash, and unleash your abilities to defeat your darker side!
