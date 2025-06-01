@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dy2cthr0bbfwd"]
+[gd_scene load_steps=17 format=3 uid="uid://dy2cthr0bbfwd"]
 
 [ext_resource type="Script" path="res://scenes/scripts/flame.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://bp7cj2qsxw3f" path="res://scenes/Sprites/C3Y1_s_precise_cutout (2).png" id="2"]
@@ -109,6 +109,7 @@ animations = [{
 size = Vector2(322, 122)
 
 [node name="Area2D" type="Area2D" groups=["flame"]]
+collision_layer = 0
 collision_mask = 7
 script = ExtResource("1")
 

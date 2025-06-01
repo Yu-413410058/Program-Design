@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dqx3c3f2us10r"]
+[gd_scene load_steps=9 format=3 uid="uid://dqx3c3f2us10r"]
 
 [ext_resource type="Script" path="res://scenes/scripts/enemy.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dwvbfa7t4u2yq" path="res://scenes/Sprites/Bird_01.png" id="2"]
@@ -30,7 +30,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqgvf"]
 size = Vector2(218.75, 109.375)
 
-[node name="bird" type="Node2D" groups=["enemies"]]
+[node name="bird" type="Node2D" groups=["bird", "enemies"]]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1")
 
@@ -38,7 +38,7 @@ script = ExtResource("1")
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_4ih6h")
 autoplay = "default"
-frame_progress = 0.31321099400520325
+frame_progress = 0.313211
 
 [node name="killzone" parent="." groups=["enemies"] instance=ExtResource("4")]
 scale = Vector2(0.4, 0.4)

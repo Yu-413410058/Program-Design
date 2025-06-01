@@ -400,7 +400,7 @@ position = Vector2(-1, 1)
 shape = SubResource("WorldBoundaryShape2D_xh23i")
 
 [node name="Player" parent="." instance=ExtResource("3")]
-position = Vector2(-731, -3276)
+position = Vector2(-720, -3276)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
@@ -699,7 +699,6 @@ transform = Transform2D(1.8, 0, 0, 1.8, 0, 0)
 [node name="health_ui" parent="UI" instance=ExtResource("15")]
 
 [node name="VictoryScreen" parent="UI" instance=ExtResource("16")]
-visible = false
 offset_left = 0.555555
 offset_top = -1.66667
 offset_right = 0.555542
@@ -718,6 +717,7 @@ shape = SubResource("RectangleShape2D_wlk4k")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BattleArea"]
 stream = ExtResource("18_30bkp")
+parameters/looping = true
 
 [node name="fire_ground" parent="." instance=ExtResource("18")]
 position = Vector2(-988, -3188)

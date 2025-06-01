@@ -46,49 +46,49 @@ size_flags_stretch_ratio = 0.5
 [node name="Time" type="Label" parent="UI/GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "Total Time:"
 
 [node name="TimeValue" type="Label" parent="UI/GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "12:34"
 
 [node name="Death" type="Label" parent="UI/GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "Total Deaths:"
 
 [node name="DeathValue" type="Label" parent="UI/GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "87"
 
 [node name="DamageTaken" type="Label" parent="UI/GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
-theme_override_font_sizes/font_size = 10
-text = "Player Damage Taken:"
+theme_override_font_sizes/font_size = 8
+text = "Player Taken Damage :"
 
 [node name="DamageTakenValue" type="Label" parent="UI/GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "42"
 
 [node name="BossTakenDamge" type="Label" parent="UI/GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "Boss Taken  Damage:"
 
 [node name="BossTakenDamageValue" type="Label" parent="UI/GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "69"
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -100,3 +100,15 @@ color = Color(0.21, 0.21, 0.21, 0.529412)
 
 [node name="VictoryMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ryw46")
+parameters/looping = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 137.391
+offset_top = 577.391
+offset_right = 1141.39
+offset_bottom = 614.391
+scale = Vector2(0.88, 0.88)
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 36
+text = "Press 'R' to Restart, 'E' to Exit"

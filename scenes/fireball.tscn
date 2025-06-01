@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://4omt5kolc1gm"]
+[gd_scene load_steps=10 format=3 uid="uid://4omt5kolc1gm"]
 
 [ext_resource type="Script" path="res://scenes/scripts/fireball.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://slj200rvh3pi" path="res://scenes/Sprites/FB001.png" id="2"]
@@ -35,7 +35,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bgu85"]
-radius = 10.197999954223633
+radius = 10.198
 
 [node name="Area2D" type="Area2D" groups=["fireballs"]]
 collision_layer = 0
@@ -44,7 +44,7 @@ script = ExtResource("1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["fireballs"]]
 sprite_frames = SubResource("SpriteFrames_y86j3")
 autoplay = "default"
-frame_progress = 0.8644779920578003
+frame_progress = 0.864478
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["fireballs"]]
 position = Vector2(11, -1)
