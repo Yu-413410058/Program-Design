@@ -89,3 +89,25 @@ Boss becomes much more dangerous:
 - Re-entering resumes from the current phase and HP.
 
 ---
+
+## 🧾 Player Record System
+
+After defeating the boss, your performance will be displayed on screen, including:
+
+- **Completion Time**
+- **Total Deaths**
+- **Player Damage Taken**
+- **Boss Damage Dealt**
+
+These records are automatically saved to a text file PlayerRecords.txt, you may have to search it up inside your userdata folder
+
+Each entry is sorted based on:
+1. **Shortest time**
+2. **Lowest deaths** (if times are equal)
+
+You will then be prompted with two choices:
+
+- Press **`R`** to **restart the game** and continue with your current max health.
+- Press **`E`** to **exit the game**.
+
+
