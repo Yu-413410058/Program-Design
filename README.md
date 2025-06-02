@@ -58,7 +58,7 @@ or if you want to modify the game yourself, then
 
 Once you reach the end, prepare to battle your ultimate nemesis: **Shadow Dino** — a more powerful version of yourself.
 
-###  Phase 1 (Boss HP ≥ 50%)
+###  Phase 1 (Boss HP ≥ 50)
 
 - **Meteor Attack**:  
   Boss stops and eyes glow red, then summons a meteor dealing **2 damage**.
@@ -68,9 +68,9 @@ Once you reach the end, prepare to battle your ultimate nemesis: **Shadow Dino**
 
 ---
 
-###  Phase 2 (Boss HP < 50%)
+###  Phase 2 (Boss HP < 50)
 
-![images/banner.png](https://github.com/Yu-413410058/Program-Design/blob/main/scenes/Sprites/Dino2_Idle.png) <!-- Replace with your actual image path -->
+![images/banner.png](https://github.com/Yu-413410058/Program-Design/blob/main/scenes/Sprites/Dino2_Idle.png)
 
 Boss becomes much more dangerous:
 
