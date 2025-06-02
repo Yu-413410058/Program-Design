@@ -122,4 +122,9 @@ You will then be prompted with two choices:
 - Press **`R`** to **restart the game** and continue with your current max health.
 - Press **`E`** to **exit the game**.
 
+## Contribution
 
+- 余佳峻 413410058 遊戲, 預告片
+- 龎漢偉 412410050 簡報, 報告
+- 莊仕嘉 412410066 簡報, 報告
+- 楊証文 412410034 簡報, 報告
