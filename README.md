@@ -70,6 +70,7 @@ Once you reach the end, prepare to battle your ultimate nemesis: **Shadow Dino**
 
 ###  Phase 2 (Boss HP < 50%)
 
+([images/banner.png][(https://github.com/Yu-413410058/Program-Design/blob/main/scenes/Sprites/Dino_Idle.png))](https://github.com/Yu-413410058/Program-Design/blob/main/scenes/Sprites/Dino_Idle.png) ](https://github.com/Yu-413410058/Program-Design/blob/main/scenes/Sprites/Dino2_Idle.png)
 Boss becomes much more dangerous:
 
 - **Meteor Rain**:  
