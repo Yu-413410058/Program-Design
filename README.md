@@ -1,5 +1,7 @@
 # Dino's Bizarre Adventure
 
+![Game Banner](images/banner.png) <!-- Replace with your actual image path -->
+
 ## Background Story
 
 You play as the dinosaur from Chrome's Dino Game — but this time, it’s not just an endless runner!  
