@@ -1,6 +1,6 @@
 # Dino's Bizarre Adventure
 
-![[Game Banner]([images/banner.png](https://github.com/Yu-413410058/Program-Design/blob/main/scenes/Sprites/Dino_Idle.png))](https://github.com/Yu-413410058/Program-Design/blob/main/scenes/Sprites/Dino_Idle.png) <!-- Replace with your actual image path -->
+![[Game Banner]([images/banner.png](https://github.com/Yu-413410058/Program-Design/blob/main/scenes/Sprites/Dino_Idle.png))](https://github.com/Yu-413410058/Program-Design/blob/main/scenes/Sprites/Dino_Idle.png) 
 
 ## Background Story
 
