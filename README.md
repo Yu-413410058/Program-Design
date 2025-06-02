@@ -38,10 +38,54 @@ Your mission is to overcome unique obstacles and face off against your greatest 
 ##  Checkpoints
 
 - Two checkpoints are placed before the final boss to save your progress!
+- One in middle of invisible platforms, the other one in the windy platforms
+- ⚠️ Press Ctrl+Z to respawn at the last checkpoint
 
 ---
 
-##  Boss Fight
 
-You’ll face your **shadow self** — a larger version of the dino, capable of melee attacks and summoning meteors!  
-Dodge, dash, and unleash your abilities to defeat your darker side!
+##  Boss Fight – The Bigger Dino
+
+Once you reach the end, prepare to battle your ultimate nemesis: **Shadow Dino** — a more powerful version of yourself.
+
+###  Phase 1 (Boss HP ≥ 50%)
+
+- **Meteor Attack**:  
+  Boss stops and eyes glow red, then summons a meteor dealing **2 damage**.
+
+- **Jump Smash**:  
+  Boss jumps to your position, dealing **2 damage**.
+
+---
+
+###  Phase 2 (Boss HP < 50%)
+
+Boss becomes much more dangerous:
+
+- **Meteor Rain**:  
+  Meteors fall **automatically** while the boss continues to move — **2 damage per hit**.
+
+- **Faster Jump Attack**:  
+  Increased speed and precision when jumping to your location.
+
+- **Self-Healing**:  
+  Occasionally restores **5 HP**.
+
+> ⚠️ Phase 2 is **permanent**, even if HP returns above 50%.
+
+---
+
+###  Arena Hazards (Phase 2 Only)
+
+- The arena floor is covered with **flames**.
+- Standing in fire causes **1 damage every 2 seconds**.
+
+---
+
+###  Battle Zone Rules
+
+- The **fight starts at the bottom of the staircase**.
+- Leaving the zone causes the boss to **stop chasing**.
+- Re-entering resumes from the current phase and HP.
+
+---
