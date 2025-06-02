@@ -37,9 +37,9 @@ or if you want to modify the game yourself, then
 
 ## Special Platforms
 
-- ** Invisible Platforms**: Toggle visibility every 2 seconds  
-- ** Windy Platforms**: Push the player rightward continuously  
-- ** Lava Platforms**: Deal 1 damage per second  
+- **Invisible Platforms**: Toggle visibility every 2 seconds  
+- **Windy Platforms**: Push the player rightward continuously  
+- **Lava Platforms**: Deal 1 damage per second  
 
 ---
 
