@@ -6,6 +6,14 @@ You play as the dinosaur from Chrome's Dino Game — but this time, it’s not j
 Your mission is to overcome unique obstacles and face off against your greatest nightmare:  
 **YOU... but bigger, stronger, and meaner!**
 
+## Install
+Simply download the exe in releases
+https://github.com/Yu-413410058/Program-Design/releases/tag/v1.0.0
+
+or if you want to modify the game yourself, then
+1. Clone or download this repository.
+2. Open it in **Godot Engine 4.3**.
+3. Run the main scene and enjoy the adventure
 ---
 
 ## Game Features
