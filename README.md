@@ -9,8 +9,12 @@ Your mission is to overcome unique obstacles and face off against your greatest 
 **YOU... but bigger, stronger, and meaner!**
 
 ## Install
-Simply download the exe in releases
+1.Download both Dino.s.Bizarre.Adventure.exe
+and liblimboai.windows.template_release.x86_64.dll
+in the releases
 https://github.com/Yu-413410058/Program-Design/releases/tag/v1.0.0
+2.Put this two files in the same folder
+3.Click the exe file and you're good to go!
 
 or if you want to modify the game yourself, then
 1. Clone or download this repository.
